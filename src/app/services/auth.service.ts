@@ -16,8 +16,16 @@ export class AuthService {
     return this.http.post<any>(this.URL + '/registroUser', user)
   }
 
+  registroColectivo(colectivo: any) {
+    return this.http.post<any>(this.URL + '/registro-colectivo', colectivo)
+  }
+
   login(user: any) {
     return this.http.post<any>(this.URL + '/login', user)
+  }
+
+  loginColectivo(colectivo: any) {
+    return this.http.post<any>(this.URL + '/login-colectivo', colectivo)
   }
 
   logueado() {
@@ -30,6 +38,6 @@ export class AuthService {
 
   logout() {
     localStorage.removeItem('token')
-    this.router.navigate(['/login']);
+    this.router.navigate(['/']);
   }
 }
