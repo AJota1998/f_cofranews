@@ -14,6 +14,7 @@ import { PrivateTaskComponent } from './components/private-task/private-task.com
 import { LoginColectivoComponent } from './components/login-colectivo/login-colectivo.component';
 import { RegistroColectivoComponent } from './components/registro-colectivo/registro-colectivo.component';
 import { InicioColectivoComponent } from './components/inicio-colectivo/inicio-colectivo.component';
+import { PanelAdminComponent } from './components/panel-admin/panel-admin.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { InicioColectivoComponent } from './components/inicio-colectivo/inicio-c
     PrivateTaskComponent,
     LoginColectivoComponent,
     RegistroColectivoComponent,
-    InicioColectivoComponent, 
+    InicioColectivoComponent,
+    PanelAdminComponent, 
   ],
   imports: [
     BrowserModule,

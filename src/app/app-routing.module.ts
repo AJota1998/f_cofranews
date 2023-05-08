@@ -10,6 +10,7 @@ import { RegistroComponent } from './components/registro/registro.component';
 import { LoginColectivoComponent } from './components/login-colectivo/login-colectivo.component';
 import { RegistroColectivoComponent } from './components/registro-colectivo/registro-colectivo.component';
 import { InicioColectivoComponent } from './components/inicio-colectivo/inicio-colectivo.component';
+import { PanelAdminComponent } from './components/panel-admin/panel-admin.component';
 
 const routes: Routes = [
   //Usuario
@@ -54,6 +55,13 @@ const routes: Routes = [
   {
     path: 'inicio-colectivo',
     component: InicioColectivoComponent,
+    canActivate: [AuthGuard]
+  },
+
+  //Admin 
+  {
+    path: 'panel-admin',
+    component: PanelAdminComponent,
     canActivate: [AuthGuard]
   }
 ];
