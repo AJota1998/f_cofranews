@@ -38,6 +38,15 @@ export class AuthService {
 
   logout() {
     localStorage.removeItem('token')
+    localStorage.removeItem('Rol')
     this.router.navigate(['/']);
+  }
+
+  crearPublicacion(publicacion: any) {
+    return this.http.post<any>(this.URL + '/crear-publicacion', publicacion)
+  }
+
+  crearEspacio(espacio: any) {
+    return this.http.post<any>(this.URL + '/crear-espacio', espacio)
   }
 }

@@ -12,6 +12,9 @@
           <li class="nav-item">
             <a class="nav-link" routerLink="/private-task" routerLinkActive="active">PRIVATE TASK</a>
           </li>
+          <li *ngIf="esColectivo" class="nav-item">
+            <a class="nav-link" routerLink="/private-task" routerLinkActive="active">Opcion Colectivo</a>
+          </li>
         </ul>
           <li class="navbar-nav ml-auto">
             <ng-container *ngIf="!authService.logueado() else logout">

@@ -11,6 +11,8 @@ import { LoginColectivoComponent } from './components/login-colectivo/login-cole
 import { RegistroColectivoComponent } from './components/registro-colectivo/registro-colectivo.component';
 import { InicioColectivoComponent } from './components/inicio-colectivo/inicio-colectivo.component';
 import { PanelAdminComponent } from './components/panel-admin/panel-admin.component';
+import { CrearPublicacionComponent } from './components/crear-publicacion/crear-publicacion.component';
+import { CrearEspacioComponent } from './components/crear-espacio/crear-espacio.component';
 
 const routes: Routes = [
   //Usuario
@@ -58,10 +60,22 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
 
+  {
+    path: 'crear-publicacion',
+    component: CrearPublicacionComponent,
+    canActivate: [AuthGuard]
+  },
+
   //Admin 
   {
     path: 'panel-admin',
     component: PanelAdminComponent,
+    canActivate: [AuthGuard]
+  },
+
+  {
+    path: 'crear-espacio',
+    component: CrearEspacioComponent,
     canActivate: [AuthGuard]
   }
 ];

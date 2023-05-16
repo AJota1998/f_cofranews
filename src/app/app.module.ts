@@ -15,6 +15,8 @@ import { LoginColectivoComponent } from './components/login-colectivo/login-cole
 import { RegistroColectivoComponent } from './components/registro-colectivo/registro-colectivo.component';
 import { InicioColectivoComponent } from './components/inicio-colectivo/inicio-colectivo.component';
 import { PanelAdminComponent } from './components/panel-admin/panel-admin.component';
+import { CrearPublicacionComponent } from './components/crear-publicacion/crear-publicacion.component';
+import { CrearEspacioComponent } from './components/crear-espacio/crear-espacio.component';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { PanelAdminComponent } from './components/panel-admin/panel-admin.compon
     LoginColectivoComponent,
     RegistroColectivoComponent,
     InicioColectivoComponent,
-    PanelAdminComponent, 
+    PanelAdminComponent,
+    CrearPublicacionComponent,
+    CrearEspacioComponent, 
   ],
   imports: [
     BrowserModule,
