@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MENU_USUARIO_ADMIN, NavbarItem } from 'src/app/shared/components/navbar/model/navbar-item.model';
 
 @Component({
   selector: 'app-panel-admin',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./panel-admin.component.scss']
 })
 export class PanelAdminComponent {
-
+  menu_usuario_admin: NavbarItem[] = MENU_USUARIO_ADMIN;
 }

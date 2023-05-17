@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container">
+      <a class="navbar-brand" href="#">LOGO</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item" *ngFor="let ni of navbarItemList">
+            <a class="nav-link" aria-current="page" routerLink="{{'/'+ni.routerlink}}" routerLinkActive="active">{{ni.label}}</a>
+          </li>
+        </ul>
+          <li class="navbar-nav ml-auto">
+            <ng-container *ngIf="!authService.logueado() else logout">
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/login" routerLinkActive="active">LOGIN USUARIO</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/login-colectivo" routerLinkActive="active">LOGIN COLECTIVO</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/registroUser" routerLinkActive="active">REGISTRO USUARIO</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/registro-colectivo" routerLinkActive="active">REGISTRO COLECTIVO</a>
+              </li>
+            </ng-container>
+            <ng-template #logout>
+              <li class="nav-item">
+                <a class="nav-link" style="cursor: pointer;" (click)="authService.logout()">Cerrar Sesión</a>
+              </li>
+            </ng-template>
+          </li>
+        
+      </div>
+    </div>
+  </nav>

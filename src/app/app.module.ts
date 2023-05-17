@@ -17,6 +17,7 @@ import { InicioColectivoComponent } from './components/inicio-colectivo/inicio-c
 import { PanelAdminComponent } from './components/panel-admin/panel-admin.component';
 import { CrearPublicacionComponent } from './components/crear-publicacion/crear-publicacion.component';
 import { CrearEspacioComponent } from './components/crear-espacio/crear-espacio.component';
+import { NavbarComponent } from './shared/components/navbar/navbar.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { CrearEspacioComponent } from './components/crear-espacio/crear-espacio.
     InicioColectivoComponent,
     PanelAdminComponent,
     CrearPublicacionComponent,
-    CrearEspacioComponent, 
+    CrearEspacioComponent,
+    NavbarComponent, 
   ],
   imports: [
     BrowserModule,
