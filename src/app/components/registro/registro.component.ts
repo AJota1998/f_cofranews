@@ -14,7 +14,7 @@ user = {
   nombreUsuario: '',
   correoElectronico: '',
   contrasena: '',
-  rol: 'General'
+  rol: 'General',
 };
 
 constructor(private authService: AuthService, private router: Router) {}
