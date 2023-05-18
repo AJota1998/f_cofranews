@@ -8,9 +8,9 @@ import { environment } from 'src/environment/environment';
 })
 export class TaskService {
 
-  constructor(private http: HttpClient) { }
+  //constructor(private http: HttpClient) { }
 
-  public getAllTask(): Observable<{_id: string, nombre: string}> {
+  /*public getAllTask(): Observable<{_id: string, nombre: string}> {
     return this.http.get<{_id: string, nombre: string}>(environment.urlBack+'/task');
-  }
+  }*/
 }

@@ -13,20 +13,27 @@ import { InicioColectivoComponent } from './components/inicio-colectivo/inicio-c
 import { PanelAdminComponent } from './components/panel-admin/panel-admin.component';
 import { CrearPublicacionComponent } from './components/crear-publicacion/crear-publicacion.component';
 import { CrearEspacioComponent } from './components/crear-espacio/crear-espacio.component';
-
+import { EspaciosColectivoComponent } from './components/espacios-colectivo/espacios-colectivo.component';
+import { EspaciosUsuarioComponent } from './components/espacios-usuario/espacios-usuario.component';
+import { PerfilColectivoComponent } from './components/perfil-colectivo/perfil-colectivo.component';
+import { PerfilUsuarioComponent } from './components/perfil-usuario/perfil-usuario.component';
+import { PublicacionesColectivoComponent } from './components/publicaciones-colectivo/publicaciones-colectivo.component';
+import { ExplorarComponent } from './components/explorar/explorar.component';
 const routes: Routes = [
-  //Usuario
+ 
   {
     path: '',
     redirectTo: '/task',
     pathMatch: 'full'
   },
 
+  //PRINCIPAL
   {
     path: 'task',
     component: TaskComponent
   },
 
+  //Usuario
   {
     path: 'private-task',
     component: PrivateTaskComponent,
@@ -41,6 +48,24 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+
+  {
+    path: 'espacios-usuario',
+    component: EspaciosUsuarioComponent,
+    canActivate: [AuthGuard]
+  },
+
+  {
+    path: 'perfil-usuario',
+    component: PerfilUsuarioComponent,
+    canActivate: [AuthGuard]
+  },
+
+  {
+    path: 'explorar',
+    component: ExplorarComponent,
+    canActivate: [AuthGuard]
   },
 
   //Colectivos
@@ -61,8 +86,20 @@ const routes: Routes = [
   },
 
   {
-    path: 'crear-publicacion',
-    component: CrearPublicacionComponent,
+    path: 'espacios-colectivo',
+    component: EspaciosColectivoComponent,
+    canActivate: [AuthGuard]
+  },
+
+  {
+    path: 'perfil-colectivo',
+    component: PerfilColectivoComponent,
+    canActivate: [AuthGuard]
+  },
+
+  {
+    path: 'publicaciones-colectivo',
+    component: PublicacionesColectivoComponent,
     canActivate: [AuthGuard]
   },
 
@@ -76,6 +113,12 @@ const routes: Routes = [
   {
     path: 'crear-espacio',
     component: CrearEspacioComponent,
+    canActivate: [AuthGuard]
+  },
+
+  {
+    path: 'crear-publicacion',
+    component: CrearPublicacionComponent,
     canActivate: [AuthGuard]
   }
 ];

@@ -4,18 +4,19 @@ export interface NavbarItem {
 }
 
 export const MENU_USUARIO_GENERAL: NavbarItem[] = [
-    {label: 'Inicio', routerlink: 'rutaInicio'},
-    {label: 'Mis Espacios', routerlink: 'rutaMisEspacios'},
-    {label: 'Explorar', routerlink: 'rutaExplorar'},
-    {label: 'Mi Perfil', routerlink: 'rutaMiPerfil'}
+    {label: 'Inicio', routerlink: 'private-task'},
+    {label: 'Mis Espacios', routerlink: 'espacios-usuario'},
+    {label: 'Explorar', routerlink: 'explorar'},
+    {label: 'Mi Perfil', routerlink: 'perfil-usuario'}
 ];
 
 export const MENU_USUARIO_COLECTIVO: NavbarItem[] = [
-    {label: 'Espacios' , routerlink: 'rutaEspacios'},
-    {label: 'Publicaciones' , routerlink: 'rutaPublicaciones'},
-    {label: 'Mi Perfil', routerlink: 'rutaMiPerfil'},
+    {label: 'Inicio', routerlink: 'inicio-colectivo'},
+    {label: 'Espacios' , routerlink: 'espacios-colectivo'},
+    {label: 'Publicaciones' , routerlink: 'publicaciones-colectivo'},
+    {label: 'Mi Perfil', routerlink: 'perfil-colectivo'},
 ];
 
 export const MENU_USUARIO_ADMIN: NavbarItem[] = [
-    {label: 'Panel General', routerlink: 'rutaPanelGeneral'}
+    {label: 'Panel General', routerlink: 'panel-admin'}
 ];

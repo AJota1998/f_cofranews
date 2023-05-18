@@ -10,8 +10,8 @@ export class TaskComponent implements OnInit {
   constructor(private _taskService: TaskService){}
 
   ngOnInit(): void {
-      this._taskService.getAllTask().subscribe(res => {
+      /*this._taskService.getAllTask().subscribe(res => {
         console.log(res);
-      })
+      })*/
   }
 }

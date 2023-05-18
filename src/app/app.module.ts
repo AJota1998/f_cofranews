@@ -18,6 +18,13 @@ import { PanelAdminComponent } from './components/panel-admin/panel-admin.compon
 import { CrearPublicacionComponent } from './components/crear-publicacion/crear-publicacion.component';
 import { CrearEspacioComponent } from './components/crear-espacio/crear-espacio.component';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
+import { EspaciosUsuarioComponent } from './components/espacios-usuario/espacios-usuario.component';
+import { PerfilUsuarioComponent } from './components/perfil-usuario/perfil-usuario.component';
+import { EspaciosColectivoComponent } from './components/espacios-colectivo/espacios-colectivo.component';
+import { PerfilColectivoComponent } from './components/perfil-colectivo/perfil-colectivo.component';
+import { PublicacionesColectivoComponent } from './components/publicaciones-colectivo/publicaciones-colectivo.component';
+import { ExplorarComponent } from './components/explorar/explorar.component';
 
 
 @NgModule({
@@ -33,7 +40,14 @@ import { NavbarComponent } from './shared/components/navbar/navbar.component';
     PanelAdminComponent,
     CrearPublicacionComponent,
     CrearEspacioComponent,
-    NavbarComponent, 
+    NavbarComponent,
+    FooterComponent,
+    EspaciosUsuarioComponent,
+    PerfilUsuarioComponent,
+    EspaciosColectivoComponent,
+    PerfilColectivoComponent,
+    PublicacionesColectivoComponent,
+    ExplorarComponent, 
   ],
   imports: [
     BrowserModule,
