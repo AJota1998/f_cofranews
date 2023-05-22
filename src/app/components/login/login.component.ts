@@ -25,6 +25,7 @@ export class LoginComponent implements OnInit {
         console.log(res);
         localStorage.setItem('token', res.token);
         localStorage.setItem('Rol', res.rol);
+        localStorage.setItem('correoElectronico', res.correoElectronico);
         if (res.rol === 'General') {
           this.router.navigate(['/private-task']);
         } else {

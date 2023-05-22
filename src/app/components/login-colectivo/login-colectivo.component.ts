@@ -22,6 +22,7 @@ export class LoginColectivoComponent implements OnInit {
       res => {
         console.log(res);
         localStorage.setItem('token', res.token);
+        localStorage.setItem('correo', res.correo);
         this.router.navigate(['/inicio-colectivo']);
       },
       err => {
