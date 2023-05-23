@@ -5,7 +5,7 @@ export interface NavbarItem {
 
 export const MENU_USUARIO_GENERAL: NavbarItem[] = [
     {label: 'Inicio', routerlink: 'private-task'},
-    {label: 'Mis Espacios', routerlink: 'espacios-usuario'},
+    //{label: 'Mis Espacios', routerlink: 'espacios-usuario'},
     {label: 'Explorar', routerlink: 'explorar'},
     {label: 'Mi Perfil', routerlink: 'perfil-usuario'}
 ];

@@ -13,16 +13,16 @@
           <li class="navbar-nav ml-auto">
             <ng-container *ngIf="!authService.logueado() else logout">
               <li class="nav-item">
-                <a class="nav-link" routerLink="/login" routerLinkActive="active">LOGIN USUARIO</a>
+                <a class="nav-link" routerLink="/login" routerLinkActive="active">Login Usuario</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" routerLink="/login-colectivo" routerLinkActive="active">LOGIN COLECTIVO</a>
+                <a class="nav-link" routerLink="/login-colectivo" routerLinkActive="active">Login Colectivo</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" routerLink="/registroUser" routerLinkActive="active">REGISTRO USUARIO</a>
+                <a class="nav-link" routerLink="/registroUser" routerLinkActive="active">Registro Usuario</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" routerLink="/registro-colectivo" routerLinkActive="active">REGISTRO COLECTIVO</a>
+                <a class="nav-link" routerLink="/registro-colectivo" routerLinkActive="active">Registro Colectivo</a>
               </li>
             </ng-container>
             <ng-template #logout>
