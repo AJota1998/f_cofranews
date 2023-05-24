@@ -16,7 +16,9 @@ export class RegistroColectivoComponent implements OnInit {
     contrasena: '',
     tipo: '',
     provincia: '',
-    localidad: ''
+    localidad: '',
+    anoFundacion: '',
+    descripcion: ''
   }
 
   constructor(private authService: AuthService, private router: Router){}
@@ -29,6 +31,8 @@ export class RegistroColectivoComponent implements OnInit {
       res => {
         console.log(res);
         localStorage.setItem('token', res.token);
+        localStorage.setItem('correo', res.correo);
+        localStorage.setItem('id', res.id);
         this.router.navigate(['/inicio-colectivo']);
       },
       err => {

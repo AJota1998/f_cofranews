@@ -27,6 +27,8 @@ registro() {
     res => {
       console.log(res);
       localStorage.setItem('token', res.token);
+      localStorage.setItem('correoElectronico', res.correoElectronico);
+      localStorage.setItem('Rol', res.rol);
       this.router.navigate(['/private-task']);
     },
     err => {

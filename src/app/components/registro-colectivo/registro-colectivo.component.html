@@ -89,6 +89,12 @@
                 <div class="form-group">
                     <input type="text" [(ngModel)]="colectivo.localidad" name="localidad" placeholder="Localidad" class="form-control">
                 </div>
+                <div class="form-group">
+                    <input type="number" [(ngModel)]="colectivo.anoFundacion" name="anoFundacion" class="form-control" minlength="4" maxlength="4" placeholder="Año de Fundacion">
+                </div>
+                <div class="form-group">
+                    <textarea [(ngModel)]="colectivo.descripcion" name="descripcion" class="form-control" placeholder="Descripcion"></textarea>
+                </div>
                 <button type="submit" class="btn btn-primary btn-block">
                     Registrarse
                 </button>
