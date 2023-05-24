@@ -14,4 +14,9 @@ export class PerfilColectivoService {
     const correo = localStorage.getItem('correo');
     return this.http.get<any>(environment.urlBack+`/perfil-colectivo?propiedad=${correo}`)
   }
+
+  public getInfo(): Observable<any> {
+    const correo = localStorage.getItem('correo');
+    return this.http.get<any>(environment.urlBack+`/info-colectivo?propiedad=${correo}`)
+  }
 }
