@@ -19,6 +19,11 @@ import { PerfilColectivoComponent } from './components/perfil-colectivo/perfil-c
 import { PerfilUsuarioComponent } from './components/perfil-usuario/perfil-usuario.component';
 import { PublicacionesColectivoComponent } from './components/publicaciones-colectivo/publicaciones-colectivo.component';
 import { ExplorarComponent } from './components/explorar/explorar.component';
+import { AdminColectivosComponent } from './components/admin-colectivos/admin-colectivos.component';
+import { AdminEspaciosComponent } from './components/admin-espacios/admin-espacios.component';
+import { AdminPublicacionesComponent } from './components/admin-publicaciones/admin-publicaciones.component';
+import { AdminUsuariosComponent } from './components/admin-usuarios/admin-usuarios.component';
+
 const routes: Routes = [
  
   {
@@ -120,7 +125,31 @@ const routes: Routes = [
     path: 'crear-publicacion',
     component: CrearPublicacionComponent,
     canActivate: [AuthGuard]
-  }
+  },
+   
+  {
+    path: 'admin-colectivos',
+    component: AdminColectivosComponent,
+    canActivate: [AuthGuard]
+   },
+
+  {
+    path: 'admin-espacios',
+    component: AdminEspaciosComponent,
+    canActivate: [AuthGuard]
+  },
+   
+  {
+    path: 'admin-publicaciones',
+    component: AdminPublicacionesComponent,
+    canActivate: [AuthGuard]
+  },
+
+  {
+    path: 'admin-usuarios', 
+    component: AdminUsuariosComponent,
+    canActivate: [AuthGuard]
+  },
 ];
 
 @NgModule({

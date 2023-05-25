@@ -18,4 +18,17 @@ export class ExplorarService {
     const id = localStorage.getItem('id');
     return this.http.get<any>(environment.urlBack+`/espacios-colectivo?propiedad=${id}`)
   }
+
+  public getUsuarios(): Observable<any> {
+    return this.http.get<any>(environment.urlBack+'/all-users');
+  }
+
+  public getPublicaciones(): Observable<any> {
+    return this.http.get<any>(environment.urlBack+'/all-publicaciones');
+  }
+
+  public getColectivos(): Observable<any> {
+    return this.http.get<any>(environment.urlBack+'/all-colectivos');
+  }  
+
 }

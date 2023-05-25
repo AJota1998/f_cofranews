@@ -25,6 +25,10 @@ import { EspaciosColectivoComponent } from './components/espacios-colectivo/espa
 import { PerfilColectivoComponent } from './components/perfil-colectivo/perfil-colectivo.component';
 import { PublicacionesColectivoComponent } from './components/publicaciones-colectivo/publicaciones-colectivo.component';
 import { ExplorarComponent } from './components/explorar/explorar.component';
+import { AdminEspaciosComponent } from './components/admin-espacios/admin-espacios.component';
+import { AdminUsuariosComponent } from './components/admin-usuarios/admin-usuarios.component';
+import { AdminColectivosComponent } from './components/admin-colectivos/admin-colectivos.component';
+import { AdminPublicacionesComponent } from './components/admin-publicaciones/admin-publicaciones.component';
 
 
 @NgModule({
@@ -47,7 +51,11 @@ import { ExplorarComponent } from './components/explorar/explorar.component';
     EspaciosColectivoComponent,
     PerfilColectivoComponent,
     PublicacionesColectivoComponent,
-    ExplorarComponent, 
+    ExplorarComponent,
+    AdminEspaciosComponent,
+    AdminUsuariosComponent,
+    AdminColectivosComponent,
+    AdminPublicacionesComponent, 
   ],
   imports: [
     BrowserModule,
