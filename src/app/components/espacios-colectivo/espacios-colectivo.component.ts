@@ -12,9 +12,14 @@ export class EspaciosColectivoComponent implements OnInit {
   constructor(private espaciosColectivo: ExplorarService) {}
   menu_usuario_colectivo: NavbarItem[] = MENU_USUARIO_COLECTIVO;
 
+  datos: any[] = []
+
   ngOnInit() {
-      this.espaciosColectivo.getEspaciosColectivo().subscribe(res => {
+      this.espaciosColectivo.getEspacios().subscribe(res => {
         console.log(res);
+        this.datos = res
+        console.log(this.datos)
       })
+
   }
 }

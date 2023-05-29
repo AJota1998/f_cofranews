@@ -1,3 +1,19 @@
 <app-navbar [navbarItemList]="menu_usuario_colectivo"></app-navbar>
 <p>espacios-colectivo works!</p>
+
+<table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Descripción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let espacio of datos">
+        <td>{{ espacio.nombre}}</td>
+        <td>{{ espacio.descripcion}}</td>
+      </tr>
+    </tbody>
+  </table> 
+
 <app-footer></app-footer>

@@ -16,5 +16,12 @@ export class PublicacionesColectivoComponent implements OnInit {
       this.publicaciones.getPublicaciones().subscribe(res => {
         console.log(res);
       })
+
+      this.publicaciones.getEspacioColectivo().subscribe(res => {
+        console.log(res)
+        for (let objeto of res) {
+          localStorage.setItem("espacio", objeto._id)
+        }
+      })
   }
 }

@@ -10,8 +10,8 @@ import { Router } from '@angular/router';
 export class CrearPublicacionComponent implements OnInit {
 
   publicacion = {
-    idColectivo: '',
-    idEspacio: '',
+    idColectivo: localStorage.getItem('id'),
+    idEspacio: localStorage.getItem('espacio'),
     tipo: '',
     titulo: '',
     contenido: '',

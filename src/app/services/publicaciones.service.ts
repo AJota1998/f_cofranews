@@ -15,4 +15,9 @@ export class PublicacionesService {
     const id = localStorage.getItem('id');
     return this.http.get<any>(environment.urlBack+`/publicaciones?propiedad=${id}`)
   }
+
+  public getEspacioColectivo(): Observable<any> {
+    const id = localStorage.getItem('id');
+    return this.http.get<any>(environment.urlBack+`/espacios-colectivo?propiedad=${id}`)
+  }
 }
