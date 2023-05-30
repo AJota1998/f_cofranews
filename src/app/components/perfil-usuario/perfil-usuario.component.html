@@ -1,3 +1,26 @@
 <app-navbar [navbarItemList]="menu_usuario_general"></app-navbar>
 <p>perfil-usuario works!</p>
+
+<table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Nombre de usuario</th>
+        <th>Correo electrónico</th>
+        <th>Nueva contraseña</th>
+        <th>Acción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let usuario of datos">
+        <td>{{ usuario.nombre}}</td>
+        <td>{{ usuario.nombreUsuario}}</td>
+        <td>{{ usuario.correoElectronico}}</td>
+        <td><input id="pass" type="password"></td>
+        <td><button class="btn btn-secondary bt-sm">Actualizar</button></td>
+      </tr>
+    </tbody>
+  </table>
+  
+
 <app-footer></app-footer>

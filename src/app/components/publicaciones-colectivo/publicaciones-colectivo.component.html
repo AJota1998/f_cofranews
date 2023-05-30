@@ -1,4 +1,24 @@
 <app-navbar [navbarItemList]="menu_usuario_colectivo"></app-navbar>
 <p>publicaciones-colectivo works!</p>
 <app-crear-publicacion></app-crear-publicacion>
+
+<table>
+    <thead>
+      <tr>
+        <th>Título</th>
+        <th>Contenido</th>
+        <th>Pie</th>
+        <th>Accion</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let publicacion of datos">
+        <td>{{ publicacion.titulo}}</td>
+        <td>{{ publicacion.contenido}}</td>
+        <td>{{ publicacion.pie}}</td>
+        <td><button class="btn btn-secondary bt-sm">Eliminar</button></td>
+      </tr>
+    </tbody>
+  </table>
+
 <app-footer></app-footer>

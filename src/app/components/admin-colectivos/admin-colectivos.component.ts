@@ -14,9 +14,12 @@ export class AdminColectivosComponent implements OnInit {
   constructor(private colectivos: ExplorarService) {}
   menu_usuario_admin: NavbarItem[] = MENU_USUARIO_ADMIN;
 
+  datos: any[] = []
+
   ngOnInit() {
     this.colectivos.getColectivos().subscribe(res => {
       console.log(res);
+      this.datos = res;
     })
   }
 

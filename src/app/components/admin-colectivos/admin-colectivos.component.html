@@ -1,3 +1,25 @@
 <app-navbar [navbarItemList]="menu_usuario_admin"></app-navbar>
 <p>admin-colectivos works!</p>
+
+<table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Correo electrónico</th>
+        <th>Localidad</th>
+        <th>Provincia</th>
+        <th>Tipo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let colectivo of datos">
+        <td>{{ colectivo.nombreColectivo}}</td>
+        <td>{{ colectivo.correo}}</td>
+        <td>{{ colectivo.localidad}}</td>
+        <td>{{ colectivo.provincia}}</td>
+        <td><button class="btn btn-secondary bt-sm">Eliminar</button></td>
+      </tr>
+    </tbody>
+  </table>
+
 <app-footer></app-footer>

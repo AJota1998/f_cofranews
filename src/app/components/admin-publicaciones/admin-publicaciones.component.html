@@ -1,3 +1,25 @@
 <app-navbar [navbarItemList]="menu_usuario_admin"></app-navbar>
 <p>admin-publicaciones works!</p>
+
+<table>
+    <thead>
+      <tr>
+        <th>Tipo de Publicación</th>
+        <th>Título</th>
+        <th>Contenido</th>
+        <th>Pie</th>
+        <th>Accion</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let publicacion of datos">
+        <td>{{ publicacion.tipo}}</td>
+        <td>{{ publicacion.titulo}}</td>
+        <td>{{ publicacion.contenido}}</td>
+        <td>{{ publicacion.pie}}</td>
+        <td><button class="btn btn-secondary bt-sm">Eliminar</button></td>
+      </tr>
+    </tbody>
+  </table>
+
 <app-footer></app-footer>

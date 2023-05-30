@@ -12,9 +12,12 @@ export class PerfilColectivoComponent implements OnInit {
   constructor(private perfilcolectivo: PerfilColectivoService) {}
   menu_usuario_colectivo: NavbarItem[] = MENU_USUARIO_COLECTIVO;
 
+  datos: any[] = []
+
   ngOnInit() {
       this.perfilcolectivo.getDatos().subscribe(res => {
         console.log(res);
+        this.datos = res
       })
   }
 }

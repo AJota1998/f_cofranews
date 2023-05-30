@@ -12,9 +12,12 @@ export class PublicacionesColectivoComponent implements OnInit {
   constructor(private publicaciones: PublicacionesService) {}
   menu_usuario_colectivo: NavbarItem[] = MENU_USUARIO_COLECTIVO;
 
+  datos: any[] = []
+
   ngOnInit() {
       this.publicaciones.getPublicaciones().subscribe(res => {
         console.log(res);
+        this.datos = res
       })
 
       this.publicaciones.getEspacioColectivo().subscribe(res => {

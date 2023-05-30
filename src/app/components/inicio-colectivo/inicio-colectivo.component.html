@@ -1,4 +1,22 @@
 <app-navbar [navbarItemList]="menu_usuario_colectivo"></app-navbar>
 <p>inicio-colectivo works!</p>
+
+<table>
+    <thead>
+      <tr>
+        <th>Año de Fundación</th>
+        <th>Nombre</th>
+        <th>Descripcion</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let colectivo of datos">
+        <td>{{ colectivo.anoFundacion}}</td>
+        <td>{{ colectivo.nombreColectivo}}</td>
+        <td>{{ colectivo.descripcion}}</td>
+      </tr>
+    </tbody>
+  </table>
+
 <app-footer></app-footer>
 

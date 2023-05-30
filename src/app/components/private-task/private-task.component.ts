@@ -12,9 +12,13 @@ export class PrivateTaskComponent implements OnInit {
   constructor(private privatetaskService: PrivateTaskService) {}
   menu_usuario_general: NavbarItem[] = MENU_USUARIO_GENERAL;
 
+  datos: any[] = [];
+
   ngOnInit() {
     this.privatetaskService.getAllTask().subscribe(res => {
       console.log(res);
+      this.datos = res
+      console.log(this.datos);
     })
 }
 }

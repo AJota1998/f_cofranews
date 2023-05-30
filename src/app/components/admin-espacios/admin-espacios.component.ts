@@ -12,10 +12,13 @@ export class AdminEspaciosComponent implements OnInit {
 
   constructor(private espacios: ExplorarService) {}
   menu_usuario_admin: NavbarItem[] = MENU_USUARIO_ADMIN;
+
+  datos: any[] = [];
   
   ngOnInit() {
       this.espacios.getEspacios().subscribe(res => {
         console.log(res);
+        this.datos = res;
       })
   }
 }

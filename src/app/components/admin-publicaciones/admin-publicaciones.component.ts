@@ -12,9 +12,12 @@ export class AdminPublicacionesComponent implements OnInit {
   constructor(private publicaciones: ExplorarService) {}
   menu_usuario_admin: NavbarItem[] = MENU_USUARIO_ADMIN;
 
+  datos: any[] = [];
+
   ngOnInit() {
     this.publicaciones.getPublicaciones().subscribe(res => {
       console.log(res);
+      this.datos = res;
     })
   }
 }

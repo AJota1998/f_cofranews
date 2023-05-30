@@ -12,9 +12,12 @@ export class ExplorarComponent implements OnInit {
   constructor(private espacios: ExplorarService) {}
   menu_usuario_general: NavbarItem[] = MENU_USUARIO_GENERAL;
 
+  datos: any[] = [];
+
   ngOnInit() {
     this.espacios.getEspacios().subscribe(res => {
       console.log(res);
+      this.datos = res;
     })
   }
 }

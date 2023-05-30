@@ -18,7 +18,6 @@ export class EspaciosColectivoComponent implements OnInit {
       this.espaciosColectivo.getEspacios().subscribe(res => {
         console.log(res);
         this.datos = res
-        console.log(this.datos)
       })
 
   }

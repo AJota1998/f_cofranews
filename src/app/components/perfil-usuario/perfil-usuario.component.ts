@@ -12,9 +12,12 @@ export class PerfilUsuarioComponent implements OnInit {
   constructor(private datosperfil: PerfilUsuarioService ) {}
   menu_usuario_general: NavbarItem[] = MENU_USUARIO_GENERAL;
 
+  datos: any[] = []
+
   ngOnInit() {
     this.datosperfil.getDatos().subscribe(res => {
       console.log(res);
+      this.datos = res;
     })
   }
 }
