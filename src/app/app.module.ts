@@ -29,6 +29,7 @@ import { AdminEspaciosComponent } from './components/admin-espacios/admin-espaci
 import { AdminUsuariosComponent } from './components/admin-usuarios/admin-usuarios.component';
 import { AdminColectivosComponent } from './components/admin-colectivos/admin-colectivos.component';
 import { AdminPublicacionesComponent } from './components/admin-publicaciones/admin-publicaciones.component';
+import { ContenidoEspaciosComponent } from './components/contenido-espacios/contenido-espacios.component';
 
 
 @NgModule({
@@ -55,7 +56,8 @@ import { AdminPublicacionesComponent } from './components/admin-publicaciones/ad
     AdminEspaciosComponent,
     AdminUsuariosComponent,
     AdminColectivosComponent,
-    AdminPublicacionesComponent, 
+    AdminPublicacionesComponent,
+    ContenidoEspaciosComponent, 
   ],
   imports: [
     BrowserModule,

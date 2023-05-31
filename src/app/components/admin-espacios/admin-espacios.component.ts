@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MENU_USUARIO_ADMIN, NavbarItem } from 'src/app/shared/components/navbar/model/navbar-item.model';
 import { ExplorarService } from 'src/app/services/explorar.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-admin-espacios',
@@ -10,7 +11,13 @@ import { ExplorarService } from 'src/app/services/explorar.service';
 
 export class AdminEspaciosComponent implements OnInit {
 
-  constructor(private espacios: ExplorarService) {}
+  espacio = {
+    nombre: '',
+    descripcion: '',
+    colectivos: []
+  }
+
+  constructor(private authService: AuthService, private espacios: ExplorarService) {}
   menu_usuario_admin: NavbarItem[] = MENU_USUARIO_ADMIN;
 
   datos: any[] = [];
@@ -20,5 +27,16 @@ export class AdminEspaciosComponent implements OnInit {
         console.log(res);
         this.datos = res;
       })
+  }
+
+  crearEspacio() {
+    this.authService.crearEspacio(this.espacio)
+    .subscribe(
+      res => {
+        console.log(res);
+      },
+      err => {console.log(err);
+      }
+    )
   }
 }

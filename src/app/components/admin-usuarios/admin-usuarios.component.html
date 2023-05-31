@@ -20,4 +20,31 @@
     </tbody>
   </table>
 
+  <div class="row">
+    <div class="col-md-4 mx-auto">
+        <div class="card-header">
+            Registro
+        </div>
+        <div class="card-body">
+            <form (submit)="registro()">
+                <div class="form-group">
+                    <input type="text" [(ngModel)]="user.nombre" name="nombre" class="form-control" placeholder="nombre" autofocus>
+                </div>
+                <div class="form-group">
+                    <input type="text" [(ngModel)]="user.nombreUsuario" name="nombreUsuario" class="form-control" placeholder="nombre Usuario" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" [(ngModel)]="user.correoElectronico" name="correoElectronico" class="form-control" placeholder="Correo" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" [(ngModel)]="user.contrasena" name="contrasena" class="form-control" placeholder="Contraseña" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">
+                    Registrarse
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
 <app-footer></app-footer>

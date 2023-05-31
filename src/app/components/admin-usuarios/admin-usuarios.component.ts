@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MENU_USUARIO_ADMIN, NavbarItem } from 'src/app/shared/components/navbar/model/navbar-item.model';
 import { ExplorarService } from 'src/app/services/explorar.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-admin-usuarios',
@@ -9,7 +10,15 @@ import { ExplorarService } from 'src/app/services/explorar.service';
 })
 export class AdminUsuariosComponent implements OnInit {
 
-  constructor(private usuarios: ExplorarService) {}
+  user = {
+    nombre: '',
+    nombreUsuario: '',
+    correoElectronico: '',
+    contrasena: '',
+    rol: 'General',
+  };
+
+  constructor(private authService: AuthService, private usuarios: ExplorarService) {}
   menu_usuario_admin: NavbarItem[] = MENU_USUARIO_ADMIN;
 
   datos: any[] = []
@@ -19,5 +28,20 @@ export class AdminUsuariosComponent implements OnInit {
         console.log(res);
         this.datos = res;
       })
+  }
+
+  registro() {
+    this.authService.registro(this.user)
+    .subscribe(
+      res => {
+        console.log(res);
+        localStorage.setItem('token', res.token);
+        localStorage.setItem('correoElectronico', res.correoElectronico);
+        localStorage.setItem('Rol', res.rol);
+      },
+      err => {
+        console.log(err);
+      }
+    )
   }
 }

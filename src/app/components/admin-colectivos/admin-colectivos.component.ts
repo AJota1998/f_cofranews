@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MENU_USUARIO_ADMIN, NavbarItem } from 'src/app/shared/components/navbar/model/navbar-item.model';
 import { ExplorarService } from 'src/app/services/explorar.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 
 @Component({
@@ -11,7 +12,18 @@ import { ExplorarService } from 'src/app/services/explorar.service';
 
 export class AdminColectivosComponent implements OnInit {
 
-  constructor(private colectivos: ExplorarService) {}
+  colectivo = {
+    nombreColectivo: '',
+    correo: '',
+    contrasena: '',
+    tipo: '',
+    provincia: '',
+    localidad: '',
+    anoFundacion: '',
+    descripcion: ''
+  }
+
+  constructor(private authService: AuthService, private colectivos: ExplorarService) {}
   menu_usuario_admin: NavbarItem[] = MENU_USUARIO_ADMIN;
 
   datos: any[] = []
@@ -21,6 +33,21 @@ export class AdminColectivosComponent implements OnInit {
       console.log(res);
       this.datos = res;
     })
+  }
+
+  registroColectivo() {
+    this.authService.registroColectivo(this.colectivo)
+    .subscribe(
+      res => {
+        console.log(res);
+        localStorage.setItem('token', res.token);
+        localStorage.setItem('correo', res.correo);
+        localStorage.setItem('id', res.id);
+      },
+      err => {
+        console.log(err);
+      }
+    )
   }
 
 }

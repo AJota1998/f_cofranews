@@ -23,6 +23,7 @@ import { AdminColectivosComponent } from './components/admin-colectivos/admin-co
 import { AdminEspaciosComponent } from './components/admin-espacios/admin-espacios.component';
 import { AdminPublicacionesComponent } from './components/admin-publicaciones/admin-publicaciones.component';
 import { AdminUsuariosComponent } from './components/admin-usuarios/admin-usuarios.component';
+import { ContenidoEspaciosComponent } from './components/contenido-espacios/contenido-espacios.component';
 
 const routes: Routes = [
  
@@ -70,6 +71,12 @@ const routes: Routes = [
   {
     path: 'explorar',
     component: ExplorarComponent,
+    canActivate: [AuthGuard]
+  },
+
+  {
+    path: 'contenido-espacios/:id',
+    component: ContenidoEspaciosComponent,
     canActivate: [AuthGuard]
   },
 

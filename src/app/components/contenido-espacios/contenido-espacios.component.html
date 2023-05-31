@@ -1,0 +1,20 @@
+<app-navbar [navbarItemList]="menu_usuario_general"></app-navbar>
+<p>contenido-espacios works!</p>
+
+<table>
+    <thead>
+      <tr>
+        <th>Título</th>
+        <th>Contenido</th>
+        <th>Pie</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let publicacion of datos">
+        <td>{{ publicacion.titulo}}</td>
+        <td>{{ publicacion.contenido}}</td>
+        <td>{{ publicacion.pie}}</td>
+      </tr>
+    </tbody>
+  </table>
+<app-footer></app-footer>
