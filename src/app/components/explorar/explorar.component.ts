@@ -22,9 +22,17 @@ export class ExplorarComponent implements OnInit {
     })
   }
 
-  seguir(id: string) {
-    this.espacios.seguir(id).subscribe(res => {
-      console.log(res);
-    })
+  seguir(id: any) {
+    this.espacios.seguir(id).subscribe(
+      res => {
+        console.log(res);
+        console.log(res.message);
+      },
+      error => {
+        console.log(error);
+        alert(error.error.message);
+      }
+    );
   }
+  
 }

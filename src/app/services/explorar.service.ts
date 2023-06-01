@@ -33,7 +33,12 @@ export class ExplorarService {
 
   public seguir(id: string): Observable<any> {
     const correo = localStorage.getItem('correoElectronico');
-    return this.http.get<any>(environment.urlBack+`/seguir-espacio?propiedad=${id}?propiedad2=${correo}`);
+    const body = {
+      propiedad: id,
+      propiedad2: correo
+    };
+    return this.http.put<any>(environment.urlBack + '/seguir-espacio', body);
   }
+  
   
 }

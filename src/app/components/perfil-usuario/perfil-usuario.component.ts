@@ -20,4 +20,10 @@ export class PerfilUsuarioComponent implements OnInit {
       this.datos = res;
     })
   }
+
+  actualizarUsuario(usuario: any) {
+    this.datosperfil.actualizarUsuario(usuario).subscribe(res => {
+      console.log(res);
+    })
+  }
 }

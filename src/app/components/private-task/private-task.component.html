@@ -15,6 +15,7 @@
         <div *ngFor="let espacio of usuario.espacios">
             <td>{{espacio.nombre}}</td>
             <td><button (click)="redirigir(espacio._id)" class="btn btn-secondary bt-sm">Entrar</button></td>
+            <td><button (click)="abandonar(espacio._id)" class="btn btn-secondary bt-sm">Dejar de seguir</button></td>
         </div>
 
       </tr>

@@ -26,4 +26,17 @@ redirigir(id: string) {
   this.router.navigate(['/contenido-espacios', id]);
 }
 
+abandonar(id: any) {
+  this.privatetaskService.abandonar(id).subscribe(
+    res => {
+      console.log(res);
+      console.log(res.message);
+    },
+    error => {
+      console.log(error);
+      alert(error.error.message);
+    }
+  );
+}
+
 }

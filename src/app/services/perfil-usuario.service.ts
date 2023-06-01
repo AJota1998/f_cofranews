@@ -14,4 +14,8 @@ export class PerfilUsuarioService {
     const correo = localStorage.getItem('correoElectronico');
     return this.http.get<any>(environment.urlBack+`/perfil-usuario?propiedad=${correo}`)
   }
+
+  public actualizarUsuario(usuario: any) {
+    return this.http.put(environment.urlBack+'/actualizar-usuario', usuario)
+  }
 }
