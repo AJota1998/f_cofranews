@@ -40,5 +40,27 @@ export class ExplorarService {
     return this.http.put<any>(environment.urlBack + '/seguir-espacio', body);
   }
   
-  
+  public pertenecer(id: any) {
+    const id_colectivo = localStorage.getItem('id');
+    const body = {
+      propiedad: id_colectivo,
+      propiedad2: id
+    };
+    return this.http.put<any>(environment.urlBack + '/pertenecer-espacio', body);
+  }
+
+  public dejarde(id: any) {
+    const id_colectivo = localStorage.getItem('id');
+    const body = {
+      propiedad: id_colectivo,
+      propiedad2: id
+    };
+    return this.http.put<any>(environment.urlBack + '/salir-espacio', body);
+  }
+
+  public verificar(id_colectivo: any) {
+    const url = environment.urlBack + '/verificar';
+    return this.http.post<boolean>(url, { id_colectivo });
+  }
+   
 }

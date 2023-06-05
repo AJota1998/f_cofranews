@@ -19,4 +19,8 @@ export class PerfilColectivoService {
     const correo = localStorage.getItem('correo');
     return this.http.get<any>(environment.urlBack+`/info-colectivo?propiedad=${correo}`)
   }
+
+  public actualizarColectivo(colectivo: any) {
+    return this.http.put(environment.urlBack+'/actualizar-colectivo', colectivo)
+  }
 }

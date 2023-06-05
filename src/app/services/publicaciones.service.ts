@@ -20,4 +20,9 @@ export class PublicacionesService {
     const id = localStorage.getItem('id');
     return this.http.get<any>(environment.urlBack+`/espacios-colectivo?propiedad=${id}`)
   }
+
+  public eliminarP(id: any): Observable<any> {
+    const url = (environment.urlBack+`/eliminar-publicacion/${id}`);
+    return this.http.delete(url);
+  }
 }

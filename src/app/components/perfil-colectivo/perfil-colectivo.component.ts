@@ -20,4 +20,10 @@ export class PerfilColectivoComponent implements OnInit {
         this.datos = res
       })
   }
+
+  actualizarColectivo(colectivo: any) {
+    this.perfilcolectivo.actualizarColectivo(colectivo).subscribe(res => {
+      console.log(res);
+    })
+  }
 }

@@ -27,4 +27,17 @@ export class PublicacionesColectivoComponent implements OnInit {
         }
       })
   }
+
+  eliminarP(id: number) {
+    this.publicaciones.eliminarP(id).subscribe(
+      res => {
+        console.log('Publicación eliminada correctamente');
+        // Realiza cualquier acción adicional después de eliminar la publicación
+      },
+      error => {
+        console.log('Error al eliminar la publicación:', error);
+        // Maneja el error de acuerdo a tus necesidades
+      }
+    );
+  }
 }

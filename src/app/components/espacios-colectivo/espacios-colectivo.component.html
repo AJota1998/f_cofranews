@@ -6,12 +6,15 @@
       <tr>
         <th>Nombre</th>
         <th>Descripción</th>
+        <th>Acción</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let espacio of datos">
         <td>{{ espacio.nombre}}</td>
         <td>{{ espacio.descripcion}}</td>
+        <td><button [disabled]="botonDesactivado" (click)="pertenecer(espacio._id)" class="btn btn-secondary bt-sm">Quiero Pertenecer</button></td>
+        <td><button (click)="dejarde(espacio._id)" class="btn btn-secondary bt-sm">Abandonar</button></td>
       </tr>
     </tbody>
   </table> 

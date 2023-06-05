@@ -1,23 +1,29 @@
 <app-navbar [navbarItemList]="menu_usuario_colectivo"></app-navbar>
 <p>perfil-colectivo works!</p>
 
+<form>
 <table>
     <thead>
       <tr>
         <th>Nombre</th>
         <th>Correo electrónico</th>
+        <th>Año de Fundación</th>
+        <th>Descripcion</th>
         <th>Nueva contraseña</th>
         <th>Acción</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let colectivo of datos">
-        <td>{{ colectivo.nombreColectivo}}</td>
-        <td>{{ colectivo.correo}}</td>
-        <td><input id="pass" type="password"></td>
-        <td><button class="btn btn-secondary bt-sm">Actualizar</button></td>
+        <td><input type="text" type="text" [(ngModel)]="colectivo.nombreColectivo" name="nombreColectivo" required></td>
+        <td><input type="text" [(ngModel)]="colectivo.correo" name="correo" required></td>
+        <td><input type="text" [(ngModel)]="colectivo.anoFundacion" name="anoFundacion"></td>
+        <td><textarea name="anoFundacion" id="" cols="23" rows="5" [(ngModel)]="colectivo.descripcion"></textarea></td>
+        <td><input type="password" name="contrasena" required placeholder="Introduzca su actual contraseña o una nueva"></td>
+        <td><button type="button" class="btn btn-secondary bt-sm" (click)="actualizarColectivo(colectivo)">Actualizar</button></td>
       </tr>
     </tbody>
   </table>
+</form>
 
 <app-footer></app-footer>
