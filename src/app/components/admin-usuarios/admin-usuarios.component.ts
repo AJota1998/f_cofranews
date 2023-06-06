@@ -44,4 +44,13 @@ export class AdminUsuariosComponent implements OnInit {
       }
     )
   }
+
+  eliminarUsuario(id: any) {
+    this.usuarios.eliminarUsuario(id).subscribe(res => {
+      console.log(res);
+    },
+    err => {
+      console.log(err);
+    });
+  }
 }

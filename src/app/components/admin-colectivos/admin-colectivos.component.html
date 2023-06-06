@@ -113,6 +113,8 @@
         <th>Localidad</th>
         <th>Provincia</th>
         <th>Tipo</th>
+        <th>Comprobar Espacio</th>
+        <th>Espacio</th>
       </tr>
     </thead>
     <tbody>
@@ -121,7 +123,15 @@
         <td>{{ colectivo.correo}}</td>
         <td>{{ colectivo.localidad}}</td>
         <td>{{ colectivo.provincia}}</td>
-        <td><button class="btn btn-secondary bt-sm">Eliminar</button></td>
+        <td><button (click)="eliminarColectivo(colectivo._id)" class="btn btn-secondary bt-sm">Eliminar</button></td>
+        <td><button (click)="comprobarEspacio(colectivo._id)" class="btn btn-secondary bt-sm">Comprobar</button></td>
+        <td *ngIf="respuestas[colectivo._id] !== undefined">
+            <ng-container *ngIf="respuestas[colectivo._id] && respuestas[colectivo._id].length > 0">
+                {{ respuestas[colectivo._id][0].nombre }}
+                <td><button (click)="eliminarColectivoEspacio(colectivo._id)" class="btn btn-secondary bt-sm">Abandonar</button></td>
+              </ng-container>
+        </td>
+        <td *ngIf="!respuestas[colectivo._id]"></td>
       </tr>
     </tbody>
   </table>

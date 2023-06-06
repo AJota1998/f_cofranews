@@ -17,7 +17,7 @@
         <td>{{ publicacion.titulo}}</td>
         <td>{{ publicacion.contenido}}</td>
         <td>{{ publicacion.pie}}</td>
-        <td><button class="btn btn-secondary bt-sm">Eliminar</button></td>
+        <td><button (click)="eliminarP(publicacion._id)" class="btn btn-secondary bt-sm">Eliminar</button></td>
       </tr>
     </tbody>
   </table>

@@ -39,4 +39,13 @@ export class AdminEspaciosComponent implements OnInit {
       }
     )
   }
+
+  eliminarEspacio(id: any) {
+    this.espacios.eliminarEspacio(id).subscribe(res => {
+      console.log(res);
+    },
+    err => {
+      console.log(err);
+    });
+  }
 }

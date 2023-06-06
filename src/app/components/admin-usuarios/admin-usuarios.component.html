@@ -15,7 +15,7 @@
         <td>{{ usuario.nombre}}</td>
         <td>{{ usuario.nombreUsuario}}</td>
         <td>{{ usuario.correoElectronico}}</td>
-        <td><button class="btn btn-secondary bt-sm">Eliminar</button></td>
+        <td><button (click)="eliminarUsuario(usuario._id)" class="btn btn-secondary bt-sm">Eliminar</button></td>
       </tr>
     </tbody>
   </table>

@@ -62,5 +62,28 @@ export class ExplorarService {
     const url = environment.urlBack + '/verificar';
     return this.http.post<boolean>(url, { id_colectivo });
   }
+
+  eliminarColectivo(id_colectivo: any) {
+    const url = environment.urlBack + `/eliminar-colectivo/${id_colectivo}`;
+    return this.http.delete(url);
+  }
+
+  eliminarEspacio(id_espacio: any) {
+    const url = environment.urlBack + `/eliminar-espacio/${id_espacio}`;
+    return this.http.delete(url);
+  }
+
+  eliminarUsuario(id_espacio: any) {
+    const url = environment.urlBack + `/eliminar-usuario/${id_espacio}`;
+    return this.http.delete(url);
+  }
+
+  comprobarEspacio(id_colectivo: any) {
+    return this.http.get<any>(environment.urlBack+`/espacio_del_colectivo/${id_colectivo}`);
+  }
+
+  eliminarColectivoEspacio(colectivoId: string) {
+    return this.http.delete(environment.urlBack+`/eliminar-colectivo-espacio/${colectivoId}`);
+  }
    
 }
