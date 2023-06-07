@@ -38,6 +38,7 @@ export class AdminEspaciosComponent implements OnInit {
       err => {console.log(err);
       }
     )
+    window.location.reload();
   }
 
   eliminarEspacio(id: any) {
@@ -47,5 +48,6 @@ export class AdminEspaciosComponent implements OnInit {
     err => {
       console.log(err);
     });
+    window.location.reload();
   }
 }

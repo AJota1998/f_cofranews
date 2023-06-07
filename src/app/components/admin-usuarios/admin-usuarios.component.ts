@@ -43,6 +43,7 @@ export class AdminUsuariosComponent implements OnInit {
         console.log(err);
       }
     )
+    window.location.reload();
   }
 
   eliminarUsuario(id: any) {
@@ -52,5 +53,6 @@ export class AdminUsuariosComponent implements OnInit {
     err => {
       console.log(err);
     });
+    window.location.reload();
   }
 }

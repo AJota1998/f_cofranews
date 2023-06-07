@@ -58,6 +58,7 @@ export class AdminColectivosComponent implements OnInit {
         console.error('Error al eliminar el colectivo del espacio:', error);
       }
     );
+    window.location.reload();
   }
 
   registroColectivo() {
@@ -73,6 +74,7 @@ export class AdminColectivosComponent implements OnInit {
         console.log(err);
       }
     )
+    window.location.reload();
   }
 
   eliminarColectivo(id: any) {
@@ -82,6 +84,7 @@ export class AdminColectivosComponent implements OnInit {
     err => {
       console.log(err);
     });
+    window.location.reload();
   }
 
 }

@@ -33,6 +33,7 @@ export class AdminPublicacionesComponent implements OnInit {
         // Maneja el error de acuerdo a tus necesidades
       }
     );
+    window.location.reload();
   }
 
 }

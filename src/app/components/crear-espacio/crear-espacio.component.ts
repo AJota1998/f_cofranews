@@ -26,6 +26,7 @@ export class CrearEspacioComponent implements OnInit {
       err => {console.log(err);
       }
     )
+    window.location.reload();
   }
 
   ngOnInit(){}

@@ -15,7 +15,7 @@
     <tbody>
       <tr *ngFor="let usuario of datos">
         <td><input type="text" [(ngModel)]="usuario.nombre" name="nombre" required></td>
-        <td><input type="text" [(ngModel)]="usuario.nombreUsuario" name="nombreUsuario" required></td>
+        <td><input type="text" [(ngModel)]="usuario.nombreUsuario" name="nombreUsuario" required pattern=".{4,8}"></td>
         <td><input type="text" [(ngModel)]="usuario.correoElectronico" name="correoElectronico" required></td>
         <td><input type="password" name="contrasena" required placeholder="Introduzca su actual contraseña o una nueva"></td>
         <td><button type="button" class="btn btn-secondary bt-sm" (click)="actualizarUsuario(usuario)">Actualizar</button></td>
