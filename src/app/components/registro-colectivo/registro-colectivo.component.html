@@ -1,21 +1,19 @@
 <app-navbar></app-navbar>
-<div class="row">
-    <div class="col-md-4 mx-auto">
-        <div class="card-header">
-            Registro
-        </div>
-        <div class="card-body">
-            <form (submit)="registroColectivo()">
-                <div class="form-group">
-                    <input type="text" [(ngModel)]="colectivo.nombreColectivo" name="nombre" class="form-control" placeholder="nombre" autofocus>
-                </div>
-                <div class="form-group">
-                    <input type="email" [(ngModel)]="colectivo.correo" name="correo" class="form-control" placeholder="Correo" required>
-                </div>
-                <div class="form-group">
-                    <input type="password" [(ngModel)]="colectivo.contrasena" name="contrasena" class="form-control" placeholder="Contraseña" required>
-                </div>
-                <div class="form-group">
+
+<div class="card mx-auto" style="width: 30rem;">
+    <img src="../../../assets/images/virgen.jpg" class="card-img-top" alt="virgen">
+    <div class="card-body">
+        <h6>Registro como Colectivo</h6>
+        <form (submit)="registroColectivo()">
+            <div class="form-group" style="display: flex; justify-content: space-around;">
+                <input type="text" [(ngModel)]="colectivo.nombreColectivo" name="nombre" class="form-control" placeholder="nombre" autofocus>
+            </div>
+            <div class="form-group" style="display: flex; justify-content: space-around;">
+                <input type="email" [(ngModel)]="colectivo.correo" name="correo" class="form-control" placeholder="Correo" required>
+                <input type="password" [(ngModel)]="colectivo.contrasena" name="contrasena" class="form-control" placeholder="Contraseña" required>
+            </div>
+            <div class="form-group" style="display: flex; justify-content: space-around;">
+                <div style="margin: 5px;">
                     <label for="tipo">Tipo</label>
                     <select [(ngModel)]="colectivo.tipo" name="tipo" class="form-control">
                         <option value="Asociación cofrade">Asociación cofrade</option>
@@ -29,7 +27,7 @@
                         <option value="Órgano católico">Órgano católico</option>
                     </select>
                 </div>
-                <div class="form-group">
+                <div style="margin: 5px;">
                     <label for="provincia">Provincia</label>
                     <select [(ngModel)]="colectivo.provincia" name="provincia" class="form-control">
                         <option value="A Coruña">A Coruña</option>
@@ -86,20 +84,20 @@
                         <option value="Zaragoza">Zaragoza</option>
                     </select>
                 </div>
-                <div class="form-group">
-                    <input type="text" [(ngModel)]="colectivo.localidad" name="localidad" placeholder="Localidad" class="form-control">
-                </div>
-                <div class="form-group">
-                    <input type="number" [(ngModel)]="colectivo.anoFundacion" name="anoFundacion" class="form-control" minlength="4" maxlength="4" placeholder="Año de Fundacion">
-                </div>
-                <div class="form-group">
-                    <textarea [(ngModel)]="colectivo.descripcion" name="descripcion" class="form-control" placeholder="Descripcion"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary btn-block">
-                    Registrarse
-                </button>
-            </form>
-        </div>
+               
+            </div>
+            <div class="form-group" style="display: flex; justify-content: space-around;">
+                <input type="text" [(ngModel)]="colectivo.localidad" name="localidad" placeholder="Localidad" class="form-control">
+                <input type="number" [(ngModel)]="colectivo.anoFundacion" name="anoFundacion" class="form-control" minlength="4" maxlength="4" placeholder="Año de Fundacion">
+            </div>
+            
+            <div class="form-group">
+                <textarea [(ngModel)]="colectivo.descripcion" name="descripcion" class="form-control" placeholder="Descripcion"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">
+                Registrarse
+            </button>
+        </form>
     </div>
-</div>
+  </div>
 <app-footer></app-footer>

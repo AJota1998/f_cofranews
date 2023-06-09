@@ -5,23 +5,25 @@ body {
 
   @media (max-width: 899px) {
     body {
-      background-image: url('./assets/images/gitanos.jpg');
+      background-image: url('./assets/images/gitano.jpg');
     }
   }
   
   @media (min-width: 900px) {
     body {
-      background-image: url('./assets/images/jesus_despojado.jpg');
+      background-image: url('./assets/images/fondo.jpg');
     }
   }
 
 footer {
     color: white;
+    background-color: rgb(43, 42, 42);
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
     padding: 10px;
     text-align: center;
-    opacity: 0.6;
+    opacity: 0.8;
+    z-index: -50;
 }

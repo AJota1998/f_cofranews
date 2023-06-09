@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container">
-      <a class="navbar-brand">LOGO</a>
+      <img src="../../../../assets/images/logo_sin_fondo.png" class="img-fluid" alt="logo sin fondo">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -12,18 +12,7 @@
         </ul>
           <li class="navbar-nav ml-auto">
             <ng-container *ngIf="!authService.logueado() else logout">
-              <li class="nav-item">
-                <a class="nav-link" routerLink="/login" routerLinkActive="active">Login Usuario</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" routerLink="/login-colectivo" routerLinkActive="active">Login Colectivo</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" routerLink="/registroUser" routerLinkActive="active">Registro Usuario</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" routerLink="/registro-colectivo" routerLinkActive="active">Registro Colectivo</a>
-              </li>
+             <a class="nav-link" routerLink="/task">Página principal</a>
             </ng-container>
             <ng-template #logout>
               <li class="nav-item">

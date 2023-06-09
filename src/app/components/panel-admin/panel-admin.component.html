@@ -1,11 +1,41 @@
 <app-navbar [navbarItemList]="menu_usuario_admin"></app-navbar>
-<p>panel-admin works!</p>
 
-<div class="container-fluid" style="margin-bottom: 15px;">
-    <button type="button" class="btn btn-secondary" routerLink="/admin-colectivos">COLECTIVOS</button>
-    <button type="button" class="btn btn-secondary" routerLink="/admin-espacios">ESPACIOS</button>
-    <button type="button" class="btn btn-secondary" routerLink="/admin-usuarios">USUARIOS</button>
-    <button type="button" class="btn btn-secondary" routerLink="/admin-publicaciones">PUBLICACIONES</button>
+
+<div class="container" style="margin-bottom: 15px;">
+
+    <div class="row justify-content-around">
+        <div class="card col-lg-4 col-md-4 col-sm-12"  style="width: 18rem;">
+            <div class="card-body">
+                <h5>Colectivos</h5>
+                <p>Accede par ver la información de los colectivos.</p>
+                <button type="button" class="btn btn-secondary" routerLink="/admin-colectivos">Acceder</button>
+            </div>
+        </div>
+        <div class="card col-lg-4 col-md-4 col-sm-12"  style="width: 18rem;">
+            <div class="card-body">
+                <h5>Espacios</h5>
+                <p>Accede par ver la información de los espacios.</p>
+                <button type="button" class="btn btn-secondary" routerLink="/admin-espacios">Acceder</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-around">
+        <div class="card col-lg-4 col-md-4 col-sm-12"  style="width: 18rem;">
+            <div class="card-body">
+                <h5>Usuarios</h5>
+                <p>Accede par ver la información de los usuarios.</p>
+                <button type="button" class="btn btn-secondary" routerLink="/admin-usuarios">Acceder</button>
+            </div>
+        </div>
+        <div class="card col-lg-4 col-md-4 col-sm-12"  style="width: 18rem;">
+            <div class="card-body">
+                <h5>Publicaciones</h5>
+                <p>Accede par ver la información de las publicaciones.</p>
+                <button type="button" class="btn btn-secondary" routerLink="/admin-publicaciones">Acceder</button>
+            </div>
+        </div>
+    </div>
 </div>
 
 <app-footer></app-footer>

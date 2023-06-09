@@ -1,50 +1,49 @@
 <app-navbar [navbarItemList]="menu_usuario_admin"></app-navbar>
-<p>admin-usuarios works!</p>
 
-<table>
-    <thead>
-      <tr>
-        <th>Nombre</th>
-        <th>Nombre de usuario</th>
-        <th>Correo electrónico</th>
-        <th>Acción</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let usuario of datos">
-        <td>{{ usuario.nombre}}</td>
-        <td>{{ usuario.nombreUsuario}}</td>
-        <td>{{ usuario.correoElectronico}}</td>
-        <td><button (click)="eliminarUsuario(usuario._id)" class="btn btn-secondary bt-sm">Eliminar</button></td>
-      </tr>
-    </tbody>
-  </table>
 
-  <div class="row">
-    <div class="col-md-4 mx-auto">
-        <div class="card-header">
-            Registro
-        </div>
-        <div class="card-body">
-            <form (submit)="registro()">
-                <div class="form-group">
-                    <input type="text" [(ngModel)]="user.nombre" name="nombre" class="form-control" placeholder="nombre" autofocus>
-                </div>
-                <div class="form-group">
-                    <input type="text" [(ngModel)]="user.nombreUsuario" name="nombreUsuario" class="form-control" placeholder="nombre Usuario" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" [(ngModel)]="user.correoElectronico" name="correoElectronico" class="form-control" placeholder="Correo" required>
-                </div>
-                <div class="form-group">
-                    <input type="password" [(ngModel)]="user.contrasena" name="contrasena" class="form-control" placeholder="Contraseña" required>
-                </div>
-                <button type="submit" class="btn btn-primary btn-block">
-                    Registrarse
-                </button>
-            </form>
-        </div>
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="card col-lg-3 col-md-4 col-sm-12" style="width: 30rem;">
+      <div class="card-body">
+        <h6>Registrar Usuario</h6>
+        <form (submit)="registro()">
+          <div class="form-group">
+              <input type="text" [(ngModel)]="user.nombre" name="nombre" class="form-control" placeholder="nombre" autofocus>
+          </div>
+          <div class="form-group">
+              <input type="text" [(ngModel)]="user.nombreUsuario" name="nombreUsuario" class="form-control" placeholder="nombre Usuario" required>
+          </div>
+          <div class="form-group">
+              <input type="email" [(ngModel)]="user.correoElectronico" name="correoElectronico" class="form-control" placeholder="Correo" required>
+          </div>
+          <div class="form-group">
+              <input type="password" [(ngModel)]="user.contrasena" name="contrasena" class="form-control" placeholder="Contraseña" required>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">
+              Registrar
+          </button>
+      </form>
+      </div>
     </div>
+    <table class="col-lg-5 col-md-8 col-sm-12 table-light" style="opacity: 0.9; border-radius: 5px; text-align: center;">
+      <thead>
+        <tr>
+          <th scoope="col">Nombre</th>
+          <th scoope="col">Nombre de usuario</th>
+          <th scoope="col">Correo electrónico</th>
+          <th scoope="col">Acción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let usuario of datos" class="table-row">
+          <td>{{ usuario.nombre}}</td>
+          <td>{{ usuario.nombreUsuario}}</td>
+          <td>{{ usuario.correoElectronico}}</td>
+          <td><button (click)="eliminarUsuario(usuario._id)" class="btn btn-secondary bt-sm">Eliminar</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 
 <app-footer></app-footer>

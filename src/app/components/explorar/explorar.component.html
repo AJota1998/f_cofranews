@@ -1,21 +1,17 @@
 <app-navbar [navbarItemList]="menu_usuario_general"></app-navbar>
-<p>explorar works!</p>
 
-<table>
-    <thead>
-      <tr>
-        <th>Nombre</th>
-        <th>Descripción</th>
-        <th>Accion</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let espacio of datos">
-        <td>{{ espacio.nombre}}</td>
-        <td>{{ espacio.descripcion}}</td>
-        <td><button (click)="seguir(espacio._id)" class="btn btn-secondary bt-sm">Seguir</button></td>
-      </tr>
-    </tbody>
-  </table> 
+<div class="container">
+  <div *ngFor="let espacio of datos">
+    <div class="card col-lg-9 col-md-12 col-sm-12" style="width: 50rem;">
+      <div class="card-body">
+        <h6 class="card-title">{{espacio.nombre}}</h6>
+        <div class="card-body row" style="display: flex; justify-content: space-between;">
+          <p class="col-lg-9 col-md-6">{{espacio.descripcion}}</p>
+          <button (click)="seguir(espacio._id)" class="col-lg-3 col-md-3 col-sm-12 btn btn-primary bt-sm mx-auto">Seguir</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <app-footer></app-footer>

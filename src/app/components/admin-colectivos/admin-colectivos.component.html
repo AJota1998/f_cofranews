@@ -1,139 +1,141 @@
 <app-navbar [navbarItemList]="menu_usuario_admin"></app-navbar>
-<p>admin-colectivos works!</p>
 
-<div class="row">
-  <div class="col-md-4 mx-auto">
-      <div class="card-header">
-          Registro
-      </div>
-      <div class="card-body">
-          <form (submit)="registroColectivo()">
-              <div class="form-group">
-                  <input type="text" [(ngModel)]="colectivo.nombreColectivo" name="nombre" class="form-control" placeholder="nombre" autofocus>
-              </div>
-              <div class="form-group">
-                  <input type="text" [(ngModel)]="colectivo.correo" name="correo" class="form-control" placeholder="Correo" required>
-              </div>
-              <div class="form-group">
-                  <input type="password" [(ngModel)]="colectivo.contrasena" name="contrasena" class="form-control" placeholder="Contraseña" required>
-              </div>
-              <div class="form-group">
-                  <label for="tipo">Tipo</label>
-                  <select [(ngModel)]="colectivo.tipo" name="tipo" class="form-control">
-                      <option value="Asociación cofrade">Asociación cofrade</option>
-                      <option value="Hermandad de vísperas">Hermandad de vísperas</option>
-                      <option value="Hermandad de penitencia">Hermandad de penitencia</option>
-                      <option value="Hermandad de gloria">Hermandad de gloria</option>
-                      <option value="Agrupación musical (AM)">Agrupación musical (AM)</option>
-                      <option value="Cornetas y tambores (CCTT)">Cornetas y tambores (CCTT)</option>
-                      <option value="Banda de música (BM)">Banda de música (BM)</option>
-                      <option value="Órgano oficial">Órgano oficial</option>
-                      <option value="Órgano católico">Órgano católico</option>
-                  </select>
-              </div>
-              <div class="form-group">
-                  <label for="provincia">Provincia</label>
-                  <select [(ngModel)]="colectivo.provincia" name="provincia" class="form-control">
-                      <option value="A Coruña">A Coruña</option>
-                      <option value="Álava">Álava</option>
-                      <option value="Albacete">Albacete</option>
-                      <option value="Alicante">Alicante</option>
-                      <option value="Almería">Almería</option>
-                      <option value="Asturias">Asturias</option>
-                      <option value="Ávila">Ávila</option>
-                      <option value="Badajoz">Badajoz</option>
-                      <option value="Barcelona">Barcelona</option>
-                      <option value="Burgos">Burgos</option>
-                      <option value="Cáceres">Cáceres</option>
-                      <option value="Cádiz">Cádiz</option>
-                      <option value="Cantabria">Cantabria</option>
-                      <option value="Castellón">Castellón</option>
-                      <option value="Ceuta">Ceuta</option>
-                      <option value="Ciudad Real">Ciudad Real</option>
-                      <option value="Córdoba">Córdoba</option>
-                      <option value="Cuenca">Cuenca</option>
-                      <option value="Girona">Girona</option>
-                      <option value="Granada">Granada</option>
-                      <option value="Guadalajara">Guadalajara</option>
-                      <option value="Guipúzcoa">Guipúzcoa</option>
-                      <option value="Huelva">Huelva</option>
-                      <option value="Huesca">Huesca</option>
-                      <option value="Islas Baleares">Islas Baleares</option>
-                      <option value="Jaén">Jaén</option>
-                      <option value="La Rioja">La Rioja</option>
-                      <option value="Las Palmas">Las Palmas</option>
-                      <option value="León">León</option>
-                      <option value="Lleida">Lleida</option>
-                      <option value="Lugo">Lugo</option>
-                      <option value="Madrid">Madrid</option>
-                      <option value="Málaga">Málaga</option>
-                      <option value="Melilla">Melilla</option>
-                      <option value="Murcia">Murcia</option>
-                      <option value="Navarra">Navarra</option>
-                      <option value="Ourense">Ourense</option>
-                      <option value="Palencia">Palencia</option>
-                      <option value="Pontevedra">Pontevedra</option>
-                      <option value="Salamanca">Salamanca</option>
-                      <option value="Santa Cruz de Tenerife">Santa Cruz de Tenerife</option>
-                      <option value="Segovia">Segovia</option>
-                      <option value="Sevilla">Sevilla</option>
-                      <option value="Soria">Soria</option>
-                      <option value="Tarragona">Tarragona</option>
-                      <option value="Teruel">Teruel</option>
-                      <option value="Toledo">Toledo</option>
-                      <option value="Valencia">Valencia</option>
-                      <option value="Valladolid">Valladolid</option>
-                      <option value="Vizcaya">Vizcaya</option>
-                      <option value="Zamora">Zamora</option>
-                      <option value="Zaragoza">Zaragoza</option>
-                  </select>
-              </div>
-              <div class="form-group">
-                  <input type="text" [(ngModel)]="colectivo.localidad" name="localidad" placeholder="Localidad" class="form-control">
-              </div>
-              <div class="form-group">
-                  <input type="number" [(ngModel)]="colectivo.anoFundacion" name="anoFundacion" class="form-control" minlength="4" maxlength="4" placeholder="Año de Fundacion">
-              </div>
-              <div class="form-group">
-                  <textarea [(ngModel)]="colectivo.descripcion" name="descripcion" class="form-control" placeholder="Descripcion"></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary btn-block">
-                  Registrarse
-              </button>
-          </form>
-      </div>
-  </div>
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="card col-lg-4 col-md-6 col-sm-12 mx-auto" style="width: 30rem;">
+            <div class="card-body">
+                <h6>Registrar Colectivo</h6>
+                <form (submit)="registroColectivo()">
+                    <div class="form-group" style="display: flex; justify-content: space-around;">
+                        <input type="text" [(ngModel)]="colectivo.nombreColectivo" name="nombre" class="form-control" placeholder="nombre" autofocus>
+                    </div>
+                    <div class="form-group" style="display: flex; justify-content: space-around;">
+                        <input type="email" [(ngModel)]="colectivo.correo" name="correo" class="form-control" placeholder="Correo" required>
+                        <input type="password" [(ngModel)]="colectivo.contrasena" name="contrasena" class="form-control" placeholder="Contraseña" required>
+                    </div>
+                    <div class="form-group" style="display: flex; justify-content: space-around;">
+                        <div style="margin: 5px;">
+                            <label for="tipo">Tipo</label>
+                            <select [(ngModel)]="colectivo.tipo" name="tipo" class="form-control">
+                                <option value="Asociación cofrade">Asociación cofrade</option>
+                                <option value="Hermandad de vísperas">Hermandad de vísperas</option>
+                                <option value="Hermandad de penitencia">Hermandad de penitencia</option>
+                                <option value="Hermandad de gloria">Hermandad de gloria</option>
+                                <option value="Agrupación musical (AM)">Agrupación musical (AM)</option>
+                                <option value="Cornetas y tambores (CCTT)">Cornetas y tambores (CCTT)</option>
+                                <option value="Banda de música (BM)">Banda de música (BM)</option>
+                                <option value="Órgano oficial">Órgano oficial</option>
+                                <option value="Órgano católico">Órgano católico</option>
+                            </select>
+                        </div>
+                        <div style="margin: 5px;">
+                            <label for="provincia">Provincia</label>
+                            <select [(ngModel)]="colectivo.provincia" name="provincia" class="form-control">
+                                <option value="A Coruña">A Coruña</option>
+                                <option value="Álava">Álava</option>
+                                <option value="Albacete">Albacete</option>
+                                <option value="Alicante">Alicante</option>
+                                <option value="Almería">Almería</option>
+                                <option value="Asturias">Asturias</option>
+                                <option value="Ávila">Ávila</option>
+                                <option value="Badajoz">Badajoz</option>
+                                <option value="Barcelona">Barcelona</option>
+                                <option value="Burgos">Burgos</option>
+                                <option value="Cáceres">Cáceres</option>
+                                <option value="Cádiz">Cádiz</option>
+                                <option value="Cantabria">Cantabria</option>
+                                <option value="Castellón">Castellón</option>
+                                <option value="Ceuta">Ceuta</option>
+                                <option value="Ciudad Real">Ciudad Real</option>
+                                <option value="Córdoba">Córdoba</option>
+                                <option value="Cuenca">Cuenca</option>
+                                <option value="Girona">Girona</option>
+                                <option value="Granada">Granada</option>
+                                <option value="Guadalajara">Guadalajara</option>
+                                <option value="Guipúzcoa">Guipúzcoa</option>
+                                <option value="Huelva">Huelva</option>
+                                <option value="Huesca">Huesca</option>
+                                <option value="Islas Baleares">Islas Baleares</option>
+                                <option value="Jaén">Jaén</option>
+                                <option value="La Rioja">La Rioja</option>
+                                <option value="Las Palmas">Las Palmas</option>
+                                <option value="León">León</option>
+                                <option value="Lleida">Lleida</option>
+                                <option value="Lugo">Lugo</option>
+                                <option value="Madrid">Madrid</option>
+                                <option value="Málaga">Málaga</option>
+                                <option value="Melilla">Melilla</option>
+                                <option value="Murcia">Murcia</option>
+                                <option value="Navarra">Navarra</option>
+                                <option value="Ourense">Ourense</option>
+                                <option value="Palencia">Palencia</option>
+                                <option value="Pontevedra">Pontevedra</option>
+                                <option value="Salamanca">Salamanca</option>
+                                <option value="Santa Cruz de Tenerife">Santa Cruz de Tenerife</option>
+                                <option value="Segovia">Segovia</option>
+                                <option value="Sevilla">Sevilla</option>
+                                <option value="Soria">Soria</option>
+                                <option value="Tarragona">Tarragona</option>
+                                <option value="Teruel">Teruel</option>
+                                <option value="Toledo">Toledo</option>
+                                <option value="Valencia">Valencia</option>
+                                <option value="Valladolid">Valladolid</option>
+                                <option value="Vizcaya">Vizcaya</option>
+                                <option value="Zamora">Zamora</option>
+                                <option value="Zaragoza">Zaragoza</option>
+                            </select>
+                        </div>
+                       
+                    </div>
+                    <div class="form-group" style="display: flex; justify-content: space-around;">
+                        <input type="text" [(ngModel)]="colectivo.localidad" name="localidad" placeholder="Localidad" class="form-control">
+                        <input type="number" [(ngModel)]="colectivo.anoFundacion" name="anoFundacion" class="form-control" minlength="4" maxlength="4" placeholder="Año de Fundacion">
+                    </div>
+                    
+                    <div class="form-group">
+                        <textarea [(ngModel)]="colectivo.descripcion" name="descripcion" class="form-control" placeholder="Descripcion"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">
+                        Registrar
+                    </button>
+                </form>
+            </div>
+          </div>
+      <table class="col-lg-7 col-md-6 col-sm-12 table-light" style="opacity: 0.9; border-radius: 5px; text-align: center;">
+        <thead>
+          <tr>
+            <th scoope="col">Nombre</th>
+            <th  scoope="col">Correo electrónico</th>
+            <th  scoope="col">Localidad</th>
+            <th  scoope="col">Provincia</th>
+            <th  scoope="col">Tipo</th>
+            <th  scoope="col">Comprobar Espacio</th>
+            <th  scoope="col">Espacio</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let colectivo of datos" class="table-row">
+            <td>{{ colectivo.nombreColectivo}}</td>
+            <td>{{ colectivo.correo}}</td>
+            <td>{{ colectivo.localidad}}</td>
+            <td>{{ colectivo.provincia}}</td>
+            <td><button (click)="eliminarColectivo(colectivo._id)" class="btn btn-secondary bt-sm">Eliminar</button></td>
+            <td><button (click)="comprobarEspacio(colectivo._id)" class="btn btn-secondary bt-sm">Comprobar</button></td>
+            <td *ngIf="respuestas[colectivo._id] !== undefined">
+                <ng-container *ngIf="respuestas[colectivo._id] && respuestas[colectivo._id].length > 0" style="text-align: center;">
+                    {{ respuestas[colectivo._id][0].nombre }}
+                    <td><button (click)="eliminarColectivoEspacio(colectivo._id)" class="btn btn-secondary bt-sm">Abandonar</button></td>
+                  </ng-container>
+            </td>
+            <td *ngIf="!respuestas[colectivo._id]"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 </div>
 
-<table>
-    <thead>
-      <tr>
-        <th>Nombre</th>
-        <th>Correo electrónico</th>
-        <th>Localidad</th>
-        <th>Provincia</th>
-        <th>Tipo</th>
-        <th>Comprobar Espacio</th>
-        <th>Espacio</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let colectivo of datos">
-        <td>{{ colectivo.nombreColectivo}}</td>
-        <td>{{ colectivo.correo}}</td>
-        <td>{{ colectivo.localidad}}</td>
-        <td>{{ colectivo.provincia}}</td>
-        <td><button (click)="eliminarColectivo(colectivo._id)" class="btn btn-secondary bt-sm">Eliminar</button></td>
-        <td><button (click)="comprobarEspacio(colectivo._id)" class="btn btn-secondary bt-sm">Comprobar</button></td>
-        <td *ngIf="respuestas[colectivo._id] !== undefined">
-            <ng-container *ngIf="respuestas[colectivo._id] && respuestas[colectivo._id].length > 0">
-                {{ respuestas[colectivo._id][0].nombre }}
-                <td><button (click)="eliminarColectivoEspacio(colectivo._id)" class="btn btn-secondary bt-sm">Abandonar</button></td>
-              </ng-container>
-        </td>
-        <td *ngIf="!respuestas[colectivo._id]"></td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
 
 <app-footer></app-footer>
