@@ -6,19 +6,23 @@
       <table class="table-light"  style="opacity: 0.9; border-radius: 5px; text-align: center;">
         <thead>
           <tr>
-            <th scoope="col">Tipo de Publicación</th>
-            <th scoope="col">Título</th>
-            <th scoope="col">Contenido</th>
-            <th scoope="col">Pie</th>
-            <th scoope="col">Accion</th>
+            <th scope="col">Colectivo</th>
+            <th scope="col">Tipo de Publicación</th>
+            <th scope="col">Título</th>
+            <th scope="col">Contenido</th>
+            <th scope="col">Pie</th>
+            <th scope="col">Fecha publicación</th>
+            <th scope="col">Accion</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let publicacion of datos" class="table-row">
+            <td>{{ publicacion.idColectivo.nombreColectivo}}</td>
             <td>{{ publicacion.tipo}}</td>
             <td>{{ publicacion.titulo}}</td>
             <td>{{ publicacion.contenido}}</td>
             <td>{{ publicacion.pie}}</td>
+            <td>{{ format(publicacion.fechaPublicacion)}}</td>
             <td><button (click)="eliminarP(publicacion._id)" class="btn btn-secondary bt-sm">Eliminar</button></td>
           </tr>
         </tbody>

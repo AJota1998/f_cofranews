@@ -1,22 +1,32 @@
 <app-navbar [navbarItemList]="menu_usuario_colectivo"></app-navbar>
-<p>espacios-colectivo works!</p>
 
-<table>
-    <thead>
-      <tr>
-        <th>Nombre</th>
-        <th>Descripción</th>
-        <th>Acción</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let espacio of datos">
-        <td>{{ espacio.nombre}}</td>
-        <td>{{ espacio.descripcion}}</td>
-        <td><button [disabled]="botonDesactivado" (click)="pertenecer(espacio._id)" class="btn btn-secondary bt-sm">Quiero Pertenecer</button></td>
-        <td><button (click)="dejarde(espacio._id)" class="btn btn-secondary bt-sm">Abandonar</button></td>
-      </tr>
-    </tbody>
-  </table> 
+<div class="container-fluid">
+  <div class="row-justify-content-center">
+  
+    <table class="col-lg-9 col-md-9 col-sm-12 table-light mx-auto" style="opacity: 0.9; border-radius: 5px; text-align: center;">
+      <thead>
+        <tr>
+          <th scope="col">Nombre</th> 
+          <th scope="col">Descripción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let espacio of datos" class="table-row">
+          <td>{{ espacio.nombre}}</td>
+          <td>{{ espacio.descripcion}}</td>
+          <td><button [disabled]="botonDesactivado" (click)="pertenecer(espacio._id)" class="btn btn-secondary bt-sm">Quiero Pertenecer</button></td>
+          <td><button (click)="dejarde(espacio._id)" class="btn btn-secondary bt-sm">Abandonar</button></td>
+        </tr>
+      </tbody>
+    </table> 
+    <div class="container-fluid">
+      <p>¿No encuentras tu espacio?</p>
+      <p>Contáctanos, nosotros lo creamos por ti.</p>
+    </div>
+    
+  </div>
+</div>
+
+
 
 <app-footer></app-footer>

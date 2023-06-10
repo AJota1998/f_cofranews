@@ -1,24 +1,34 @@
 <app-navbar [navbarItemList]="menu_usuario_colectivo"></app-navbar>
-<p>publicaciones-colectivo works!</p>
-<app-crear-publicacion></app-crear-publicacion>
 
-<table>
-    <thead>
-      <tr>
-        <th>Título</th>
-        <th>Contenido</th>
-        <th>Pie</th>
-        <th>Accion</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let publicacion of datos">
-        <td>{{ publicacion.titulo}}</td>
-        <td>{{ publicacion.contenido}}</td>
-        <td>{{ publicacion.pie}}</td>
-        <td><button (click)="eliminarP(publicacion._id)" class="btn btn-secondary bt-sm">Eliminar</button></td>
-      </tr>
-    </tbody>
-  </table>
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-lg-5 col-md-8 col-sm-12 table-light" style="opacity: 0.9; border-radius: 5px; text-align: center;">
+      <table class="table-light my-auto"  style="opacity: 0.9; border-radius: 5px; text-align: center;">
+        <thead>
+          <tr>
+            <th scoope="col">Tipo de Publicación</th>
+            <th scoope="col">Título</th>
+            <th scoope="col">Contenido</th>
+            <th scoope="col">Pie</th>
+            <th scoope="col">Fecha publicación</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let publicacion of datos" class="table-row">
+            <td>{{ publicacion.tipo}}</td>
+            <td>{{ publicacion.titulo}}</td>
+            <td>{{ publicacion.contenido}}</td>
+            <td>{{ publicacion.pie}}</td>
+            <td>{{ format(publicacion.fechaPublicacion)}}</td>
+            <td><button (click)="eliminarP(publicacion._id)" class="btn btn-secondary bt-sm">Eliminar</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-lg-6 col-md-8 col-sm-12">
+      <app-crear-publicacion></app-crear-publicacion>
+    </div>
+  </div>
+</div>
 
 <app-footer></app-footer>

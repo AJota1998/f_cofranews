@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MENU_USUARIO_COLECTIVO, NavbarItem } from 'src/app/shared/components/navbar/model/navbar-item.model';
 import { PublicacionesService } from 'src/app/services/publicaciones.service';
+import { format } from 'date-fns';
 
 @Component({
   selector: 'app-publicaciones-colectivo',
@@ -39,5 +40,9 @@ export class PublicacionesColectivoComponent implements OnInit {
         // Maneja el error de acuerdo a tus necesidades
       }
     );
+  }
+
+  format(fecha: string): string {
+    return format(new Date(fecha), 'dd/MM/yyyy');
   }
 }

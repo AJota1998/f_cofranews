@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MENU_USUARIO_GENERAL, NavbarItem } from 'src/app/shared/components/navbar/model/navbar-item.model';
 import { PrivateTaskService } from 'src/app/services/private-task.service';
 import { ActivatedRoute } from '@angular/router';
+import { format } from 'date-fns';
 
 @Component({
   selector: 'app-contenido-espacios',
@@ -26,6 +27,10 @@ export class ContenidoEspaciosComponent implements OnInit {
       this.datos = res;
     })
 
+  }
+
+  format(fecha: string): string {
+    return format(new Date(fecha), 'dd/MM/yyyy')
   }
 
 }

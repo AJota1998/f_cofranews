@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MENU_USUARIO_ADMIN, NavbarItem } from 'src/app/shared/components/navbar/model/navbar-item.model';
 import { ExplorarService } from 'src/app/services/explorar.service';
 import { PublicacionesService } from 'src/app/services/publicaciones.service';
+import { format } from 'date-fns';
 
 @Component({
   selector: 'app-admin-publicaciones',
@@ -34,6 +35,10 @@ export class AdminPublicacionesComponent implements OnInit {
       }
     );
     window.location.reload();
+  }
+
+  format(fecha: string): string {
+    return format(new Date(fecha), 'dd/MM/yyyy');
   }
 
 }

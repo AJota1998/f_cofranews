@@ -1,22 +1,12 @@
 <app-navbar [navbarItemList]="menu_usuario_colectivo"></app-navbar>
-<p>inicio-colectivo works!</p>
 
-<table>
-    <thead>
-      <tr>
-        <th>Año de Fundación</th>
-        <th>Nombre</th>
-        <th>Descripcion</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let colectivo of datos">
-        <td>{{ colectivo.anoFundacion}}</td>
-        <td>{{ colectivo.nombreColectivo}}</td>
-        <td>{{ colectivo.descripcion}}</td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="card mx-auto" style="width: 35rem;" *ngFor="let colectivo of datos">
+    <div class="card-body">
+      <h5 class="card-title">{{colectivo.nombreColectivo}}</h5>
+      <p class="card-text">{{colectivo.descripcion}}</p>
+      <p class="card-text">Fundado en: {{colectivo.anoFundacion}}</p>
+    </div>
+  </div>
 
 <app-footer></app-footer>
 
