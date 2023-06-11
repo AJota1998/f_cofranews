@@ -1,4 +1,7 @@
 <div class="row justify-content-center">
+    <div class="alert alert-secondary col-6 mx-auto" role="alert" *ngIf="showMessage" style="text-align: center;">
+        {{ alert }}
+      </div>
     <div class="card col-lg-8 col-md-6 col-sm-12">
         <div class="card-body">
             <h6>Crear Publicación</h6>

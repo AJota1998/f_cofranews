@@ -17,6 +17,8 @@ export class EspaciosColectivoComponent implements OnInit {
   botonDesactivado = false;
   botonesDesactivados: { [id: string]: boolean } = {};
 
+  alertPertenecer: string = '';
+  showMessagePertenecer = false;
 
   ngOnInit() {
       this.espaciosColectivo.getEspacios().subscribe(res => {
@@ -42,11 +44,20 @@ export class EspaciosColectivoComponent implements OnInit {
   pertenecer(id: any) {
     this.espaciosColectivo.pertenecer(id).subscribe(res => {
       console.log(res);
+      this.alertPertenecer = res.message;
+      this.showMessagePertenecer = true;
+
+      setTimeout(() => {
+        this.showMessagePertenecer = false;
+      }, 1700);
+
     },
     error => {
       console.log(error);
     })
-    window.location.reload();
+    setTimeout(() => {
+      window.location.reload();
+    }, 1700)
   }
 
 

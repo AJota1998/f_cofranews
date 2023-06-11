@@ -1,6 +1,9 @@
 <app-navbar [navbarItemList]="menu_usuario_colectivo"></app-navbar>
 
 <div class="container-fluid">
+  <div class="alert alert-primary col-3 mx-auto" role="alert" *ngIf="showMessage" style="text-align: center;">
+    {{ alert }}
+  </div>
   <div class="row justify-content-center">
     <div class="col-lg-5 col-md-8 col-sm-12 table-light" style="opacity: 0.9; border-radius: 5px; text-align: center;">
       <table class="table-light my-auto"  style="opacity: 0.9; border-radius: 5px; text-align: center;">

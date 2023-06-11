@@ -14,6 +14,8 @@ export class PrivateTaskComponent implements OnInit {
   menu_usuario_general: NavbarItem[] = MENU_USUARIO_GENERAL;
 
   datos: any[] = [];
+  alert: string = '';
+  showMessage = false;
 
   ngOnInit() {
     this.privatetaskService.getAllTask().subscribe(res => {
@@ -31,12 +33,22 @@ abandonar(id: any) {
     res => {
       console.log(res);
       console.log(res.message);
+      this.alert = res.message;
+      this.showMessage = true;
+
+      setTimeout(() => {
+        this.showMessage = false;
+      }, 1700);
+
     },
     error => {
       console.log(error);
       alert(error.error.message);
     }
   );
+  setTimeout(() => {
+    window.location.reload();
+  }, 1700)
 }
 
 }

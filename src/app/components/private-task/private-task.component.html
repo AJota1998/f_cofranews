@@ -1,6 +1,11 @@
 <app-navbar [navbarItemList]="menu_usuario_general"></app-navbar>
 
 <div class="container">
+
+  <div class="alert alert-primary col-3 mx-auto" role="alert" *ngIf="showMessage">
+    {{ alert }}
+  </div>
+  
   <div *ngFor="let usuario of datos">
     <h5>Espacios que sigues</h5>
     <div *ngFor="let espacio of usuario.espacios" style="display: flex; justify-content: space-around;">

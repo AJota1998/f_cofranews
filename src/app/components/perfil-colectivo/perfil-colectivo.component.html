@@ -1,5 +1,9 @@
 <app-navbar [navbarItemList]="menu_usuario_colectivo"></app-navbar>
 
+<div class="alert alert-primary col-3 mx-auto" role="alert" *ngIf="showMessage" style="text-align: center;">
+  {{ alert }}
+</div>
+
 <div class="card mx-auto" style="width: 30rem;">
   <div class="card-body">
     <form>

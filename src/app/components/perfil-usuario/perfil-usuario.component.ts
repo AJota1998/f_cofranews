@@ -13,6 +13,9 @@ export class PerfilUsuarioComponent implements OnInit {
   menu_usuario_general: NavbarItem[] = MENU_USUARIO_GENERAL;
 
   datos: any[] = []
+  alert: any = '';
+  showMessage = false;
+  showError = false;
 
   ngOnInit() {
     this.datosperfil.getDatos().subscribe(res => {
@@ -24,6 +27,16 @@ export class PerfilUsuarioComponent implements OnInit {
   actualizarUsuario(usuario: any) {
     this.datosperfil.actualizarUsuario(usuario).subscribe(res => {
       console.log(res);
+      this.alert = "Usuario actualizado correctamente";
+      this.showMessage = true;
+
+      setTimeout(() => {
+        this.showMessage = false;
+      }, 1700);
+      
     })
+    setTimeout(() => {
+      window.location.reload();
+    }, 1700);
   }
 }

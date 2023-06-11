@@ -14,6 +14,10 @@ export class ExplorarComponent implements OnInit {
 
   
   datos: any[] = [];
+  alert: string = '';
+  alertError: string = '';
+  showMessage = false;
+  showError = false;
 
   ngOnInit() {
     this.espacios.getEspacios().subscribe(res => {
@@ -27,11 +31,23 @@ export class ExplorarComponent implements OnInit {
       res => {
         console.log(res);
         console.log(res.message);
+        this.alert = res.message;
+        this.showMessage = true;
+
+        setTimeout(() => {
+          this.showMessage = false;
+        }, 1700);
       },
       error => {
-        console.log(error);
-        alert(error.error.message);
-      }
+        console.log(error.error.message);
+
+          this.alertError = error.error.message;
+          this.showError = true;
+
+          setTimeout(() => {
+            this.showError = false;
+          }, 1700);
+        }
     );
   }
   

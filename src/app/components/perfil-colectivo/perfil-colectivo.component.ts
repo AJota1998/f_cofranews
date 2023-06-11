@@ -13,6 +13,8 @@ export class PerfilColectivoComponent implements OnInit {
   menu_usuario_colectivo: NavbarItem[] = MENU_USUARIO_COLECTIVO;
 
   datos: any[] = []
+  alert: any = '';
+  showMessage = false;
 
   ngOnInit() {
       this.perfilcolectivo.getDatos().subscribe(res => {
@@ -24,6 +26,15 @@ export class PerfilColectivoComponent implements OnInit {
   actualizarColectivo(colectivo: any) {
     this.perfilcolectivo.actualizarColectivo(colectivo).subscribe(res => {
       console.log(res);
+      this.alert = "Colectivo actualizado correctamente";
+      this.showMessage = true;
+
+      setTimeout(() => {
+        this.showMessage = false;
+      }, 1700);
     })
+    setTimeout(() => {
+      window.location.reload();
+    }, 1700);
   }
 }

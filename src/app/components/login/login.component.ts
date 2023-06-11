@@ -14,6 +14,9 @@ export class LoginComponent implements OnInit {
     contrasena: ''
   }
 
+  alert: string = '';
+  showMessage = false;
+
   constructor(private authService : AuthService, private router : Router ) {}
   
   ngOnInit() {}
@@ -34,7 +37,13 @@ export class LoginComponent implements OnInit {
         
       },
       err => {
-        console.log(err);
+        console.log(err.error);
+        this.alert = err.error;
+        this.showMessage = true;
+  
+        setTimeout(() => {
+          this.showMessage = false;
+        }, 1700);
       }
     )
   }

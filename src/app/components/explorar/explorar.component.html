@@ -1,5 +1,13 @@
 <app-navbar [navbarItemList]="menu_usuario_general"></app-navbar>
 <div class="container">
+  <div class="alert alert-primary col-3 mx-auto" role="alert" *ngIf="showMessage" style="text-align: center;">
+    {{ alert }}
+  </div>
+
+  <div class="alert alert-secondary col-3 mx-auto" *ngIf="showError" style="text-align: center;">
+    {{ alertError }}
+  </div>
+
   <div *ngFor="let espacio of datos">
     <div class="card col-lg-9 col-md-12 col-sm-12" style="width: 50rem;">
       <div class="card-body">

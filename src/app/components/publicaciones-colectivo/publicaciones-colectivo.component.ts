@@ -15,6 +15,9 @@ export class PublicacionesColectivoComponent implements OnInit {
 
   datos: any[] = []
 
+  alert: string = '';
+  showMessage = false;
+
   ngOnInit() {
       this.publicaciones.getPublicaciones().subscribe(res => {
         console.log(res);
@@ -33,13 +36,22 @@ export class PublicacionesColectivoComponent implements OnInit {
     this.publicaciones.eliminarP(id).subscribe(
       res => {
         console.log('Publicación eliminada correctamente');
-        // Realiza cualquier acción adicional después de eliminar la publicación
+        console.log(res);
+        console.log(res.message);
+        this.alert = res.message;
+        this.showMessage = true;
+        setTimeout(() => {
+          this.showMessage = false;
+        }, 1700);
       },
       error => {
         console.log('Error al eliminar la publicación:', error);
         // Maneja el error de acuerdo a tus necesidades
       }
     );
+    setTimeout(() => {
+     window.location.reload();
+    }, 1700);
   }
 
   format(fecha: string): string {

@@ -18,17 +18,32 @@ export class CrearPublicacionComponent implements OnInit {
     pie: ''
   }
 
+  alert: string = '';
+  showMessage = false;
   constructor(private authService: AuthService, private router: Router) {}
 
   crearPublicacion() {
-    this.authService.crearPublicacion(this.publicacion)
-    .subscribe(
-      res => {
-        console.log(res);
-      },
-      err => {console.log(err);
-      }
-    )
+
+    if (this.publicacion.tipo === "" || this.publicacion.titulo === "" || this.publicacion.contenido === "" || this.publicacion.pie === "") {
+      this.alert = "Faltan campos por rellenar"
+      this.showMessage = true;
+
+      setTimeout(() => {
+        this.showMessage = false;
+      }, 1700);
+    } else {
+      this.authService.crearPublicacion(this.publicacion)
+      .subscribe(
+        res => {
+          console.log(res);
+        },
+        err => {console.log(err);
+        }
+      )
+      window.location.reload();
+    }
+
+   
   }
 
   ngOnInit() {}
