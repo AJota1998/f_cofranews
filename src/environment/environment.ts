@@ -1,3 +1,3 @@
 export const environment = {
-    urlBack: 'http://localhost:5000/api',
+    urlBack: 'bcofranews-production.up.railway.app/api',
 }
