@@ -17,6 +17,12 @@ export class AdminEspaciosComponent implements OnInit {
     colectivos: []
   }
 
+  alert: string = '';
+  showMessage = false;
+
+  alertEliminar: string = '';
+  showMessageEliminar = false;
+
   constructor(private authService: AuthService, private espacios: ExplorarService) {}
   menu_usuario_admin: NavbarItem[] = MENU_USUARIO_ADMIN;
 
@@ -30,15 +36,27 @@ export class AdminEspaciosComponent implements OnInit {
   }
 
   crearEspacio() {
-    this.authService.crearEspacio(this.espacio)
-    .subscribe(
-      res => {
-        console.log(res);
-      },
-      err => {console.log(err);
-      }
-    )
-    window.location.reload();
+
+    if(this.espacio.nombre === "" || this.espacio.descripcion === "") {
+      this.alert = "Faltan campos por rellenar"
+      this.showMessage = true;
+
+      setTimeout(() => {
+        this.showMessage = false;
+      }, 1700);
+    } else {
+      this.authService.crearEspacio(this.espacio)
+      .subscribe(
+        res => {
+          console.log(res);
+        },
+        err => {console.log(err);
+        }
+      )
+      window.location.reload();
+    }
+
+   
   }
 
   eliminarEspacio(id: any) {
@@ -47,7 +65,13 @@ export class AdminEspaciosComponent implements OnInit {
     },
     err => {
       console.log(err);
+      this.alertEliminar = "Espacio eliminado correctamente"
+      this.showMessageEliminar = true;
+      setTimeout(() => {
+        this.showMessage = false;
+        window.location.reload();
+      }, 1700);
     });
-    window.location.reload();
+    
   }
 }

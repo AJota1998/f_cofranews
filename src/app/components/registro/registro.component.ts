@@ -17,12 +17,24 @@ user = {
   rol: 'General',
 };
 
+alert: string = '';
+showMessage = false;
+
 constructor(private authService: AuthService, private router: Router) {}
 
 ngOnInit() {}
 
 registro() {
-  this.authService.registro(this.user)
+
+  if(this.user.nombre === "" || this.user.nombreUsuario === "" || this.user.correoElectronico === "" ||
+  this.user.contrasena === "") {
+    this.alert = "Faltan campos por rellenar"
+    this.showMessage = true;
+    setTimeout(() => {
+      this.showMessage = false;
+    }, 1700);
+  } else {
+    this.authService.registro(this.user)
   .subscribe(
     res => {
       console.log(res);
@@ -35,6 +47,9 @@ registro() {
       console.log(err);
     }
   )
+  }
+
+  
 }
 
 }

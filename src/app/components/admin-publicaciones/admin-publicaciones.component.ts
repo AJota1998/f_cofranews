@@ -16,6 +16,9 @@ export class AdminPublicacionesComponent implements OnInit {
 
   datos: any[] = [];
 
+  alert: string = '';
+  showMessage = false;
+
   ngOnInit() {
     this.publicaciones.getPublicaciones().subscribe(res => {
       console.log(res);
@@ -27,14 +30,18 @@ export class AdminPublicacionesComponent implements OnInit {
     this.publi.eliminarP(id).subscribe(
       res => {
         console.log('Publicación eliminada correctamente');
-        // Realiza cualquier acción adicional después de eliminar la publicación
+        this.alert = "Publicación eliminada correctamente"
+        this.showMessage = true;
+        setTimeout(() => {
+          this.showMessage = false;
+          window.location.reload();
+        }, 1700);
       },
       error => {
         console.log('Error al eliminar la publicación:', error);
         // Maneja el error de acuerdo a tus necesidades
       }
     );
-    window.location.reload();
   }
 
   format(fecha: string): string {

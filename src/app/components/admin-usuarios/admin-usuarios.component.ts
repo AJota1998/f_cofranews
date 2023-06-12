@@ -18,6 +18,12 @@ export class AdminUsuariosComponent implements OnInit {
     rol: 'General',
   };
 
+  alert: string = '';
+  showMessage = false;
+
+  alertEliminar: string = '';
+  showMessageEliminar = false;
+
   constructor(private authService: AuthService, private usuarios: ExplorarService) {}
   menu_usuario_admin: NavbarItem[] = MENU_USUARIO_ADMIN;
 
@@ -31,19 +37,31 @@ export class AdminUsuariosComponent implements OnInit {
   }
 
   registro() {
-    this.authService.registro(this.user)
-    .subscribe(
-      res => {
-        console.log(res);
-        localStorage.setItem('token', res.token);
-        localStorage.setItem('correoElectronico', res.correoElectronico);
-        localStorage.setItem('Rol', res.rol);
-      },
-      err => {
-        console.log(err);
-      }
-    )
-    window.location.reload();
+
+    if(this.user.nombre === "" || this.user.nombreUsuario === "" || this.user.correoElectronico === "" ||
+    this.user.contrasena === "") {
+      this.alert = "Faltan campos por rellenar"
+      this.showMessage = true;
+      setTimeout(() => {
+        this.showMessage = false;
+      }, 1700);
+    } else {
+      this.authService.registro(this.user)
+      .subscribe(
+        res => {
+          console.log(res);
+          localStorage.setItem('token', res.token);
+          localStorage.setItem('correoElectronico', res.correoElectronico);
+          localStorage.setItem('Rol', res.rol);
+        },
+        err => {
+          console.log(err);
+        }
+      )
+      window.location.reload();
+    }
+
+   
   }
 
   eliminarUsuario(id: any) {
@@ -52,7 +70,13 @@ export class AdminUsuariosComponent implements OnInit {
     },
     err => {
       console.log(err);
+      this.alertEliminar = "Usuario eliminado correctamente"
+      this.showMessageEliminar = true;
+      setTimeout(() => {
+        this.showMessage = false;
+        window.location.reload();
+      }, 1700);
     });
-    window.location.reload();
+   
   }
 }

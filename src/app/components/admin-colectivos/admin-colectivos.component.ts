@@ -28,6 +28,17 @@ export class AdminColectivosComponent implements OnInit {
 
   datos: any[] = []
   respuestas: { [key: string]: any } = {};
+  alert: string = '';
+  showMessage = false;
+
+  alertEliminar: string = '';
+  showMessageEliminar = false;
+
+  alertComprobar: string = ''
+  showMessageComprobar = false;
+
+  alertAbandonar: string = '';
+  showMessageAbandonar = false;
 
   ngOnInit() {
     this.colectivos.getColectivos().subscribe(res => {
@@ -44,7 +55,11 @@ export class AdminColectivosComponent implements OnInit {
       },
       (error) => {
         console.error('Error al obtener la respuesta:', error);
-        alert(error.error);
+        this.alertComprobar = error.error;
+        this.showMessageComprobar = true; 
+        setTimeout(() => {
+          this.showMessageComprobar = false;
+        }, 1700);
       }
     );
   }
@@ -53,38 +68,68 @@ export class AdminColectivosComponent implements OnInit {
     this.colectivos.eliminarColectivoEspacio(colectivoId).subscribe(
       (res) => {
         console.log(res);
+        this.alertAbandonar = "Colectivo eliminado del espacio correctamente";
+        this.showMessageAbandonar = true;
+        setTimeout(() => {
+          this.showMessageAbandonar = false;
+          window.location.reload();
+        }, 1700);
       },
       (error) => {
         console.error('Error al eliminar el colectivo del espacio:', error);
       }
     );
-    window.location.reload();
+    
   }
 
   registroColectivo() {
-    this.authService.registroColectivo(this.colectivo)
-    .subscribe(
-      res => {
-        console.log(res);
-        localStorage.setItem('token', res.token);
-        localStorage.setItem('correo', res.correo);
-        localStorage.setItem('id', res.id);
-      },
-      err => {
-        console.log(err);
-      }
-    )
-    window.location.reload();
+
+    if(this.colectivo.nombreColectivo === "" || this.colectivo.correo === "" || this.colectivo.contrasena === "" ||
+     this.colectivo.tipo === "" || this.colectivo.provincia === "" || this.colectivo.localidad === ""
+     || this.colectivo.anoFundacion === "" || this.colectivo.descripcion === "") {
+      this.alert = "Faltan campos por rellenar"
+      this.showMessage = true;
+
+      setTimeout(() => {
+        this.showMessage = false;
+      }, 1700);
+     } else {
+        this.authService.registroColectivo(this.colectivo)
+        .subscribe(
+          res => {
+            console.log(res);
+            localStorage.setItem('token', res.token);
+            localStorage.setItem('correo', res.correo);
+            localStorage.setItem('id', res.id);
+          },
+          err => {
+            console.log(err);
+          }
+        )
+        window.location.reload();
+     }
+
+    
   }
 
   eliminarColectivo(id: any) {
     this.colectivos.eliminarColectivo(id).subscribe(res => {
       console.log(res);
+      this.alertEliminar = "Colectivo eliminado correctamente"
+      this.showMessageEliminar = true;
+
+     
     },
     err => {
       console.log(err);
+      this.alertEliminar = "Colectivo eliminado correctamente"
+      this.showMessageEliminar = true;
+      setTimeout(() => {
+        this.showMessageEliminar = false;
+        window.location.reload();
+      }, 1700);
     });
-    window.location.reload();
+   
   }
 
 }

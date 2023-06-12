@@ -1,5 +1,7 @@
 <app-navbar [navbarItemList]="menu_usuario_admin"></app-navbar>
-
+<div class="alert alert-primary col-3 mx-auto" role="alert" *ngIf="showMessage" style="text-align: center;">
+  {{ alert }}
+</div>
 <div class="container-fluid">
   <div class="row justify-content-center">
     <div class="col-lg-6 col-md-8 col-sm-12 table-light" style="opacity: 0.9; border-radius: 5px; text-align: center;">

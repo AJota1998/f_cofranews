@@ -1,5 +1,10 @@
 <app-navbar [navbarItemList]="menu_usuario_admin"></app-navbar>
-
+<div class="alert alert-secondary col-3 mx-auto" role="alert" *ngIf="showMessage" style="text-align: center;">
+  {{ alert }}
+</div>
+<div class="alert alert-primary col-3 mx-auto" role="alert" *ngIf="showMessageEliminar" style="text-align: center;">
+  {{ alertEliminar }}
+</div>
 <div class="container-fluid">
   <div class="row justify-content-center">
     <div class="card col-lg-4 col-md-6 col-sm-12">
@@ -12,7 +17,7 @@
           <div class="form-group">
               <textarea [(ngModel)]="espacio.descripcion" name="descripcion" class="form-control" placeholder="Descripcion" required></textarea>
           </div>
-          <button type="submit" class="btn btn-primary btn-block">
+          <button type="submit" class="btn btn-primary btn-block" style="margin: 5px;">
               Crear
           </button>
       </form>
