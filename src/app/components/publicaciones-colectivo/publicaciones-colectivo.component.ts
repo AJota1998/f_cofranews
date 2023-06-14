@@ -41,7 +41,7 @@ export class PublicacionesColectivoComponent implements OnInit {
         console.log(res)
         for (let objeto of res) {
           localStorage.setItem("espacio", objeto._id)
-          window.location.reload()
+          
         }
       })
   }
@@ -87,7 +87,7 @@ export class PublicacionesColectivoComponent implements OnInit {
         err => {console.log(err);
         }
       )
-      window.location.reload();
+     
     }
 
    
