@@ -4,6 +4,10 @@
   <div class="alert alert-primary col-3 mx-auto" role="alert" *ngIf="showMessage" style="text-align: center;">
     {{ alert }}
   </div>
+
+  <div class="alert alert-secondary col-6 mx-auto" role="alert" *ngIf="showMessagePublicacion" style="text-align: center;">
+    {{ alertPublicacion }}
+  </div>
   <div class="row justify-content-center">
     <div class="col-lg-5 col-md-8 col-sm-12 table-light" style="opacity: 0.9; border-radius: 5px; text-align: center;">
       <table class="table-light my-auto"  style="opacity: 0.9; border-radius: 5px; text-align: center;">
@@ -28,9 +32,9 @@
         </tbody>
       </table>
     </div>
-    <div class="col-lg-6 col-md-8 col-sm-12">
-      <div class="card col-lg-8 col-md-6 col-sm-12">
-        <div class="card-body">
+    <div>
+      <div class="card col-lg-8 col-md-8 col-sm-12">
+        <div class="card-body" style="opacity: 0.9; margin: 10px;">
             <h6>Crear Publicación</h6>
             <form (submit)="crearPublicacion()">
                 <div class="form-group">
