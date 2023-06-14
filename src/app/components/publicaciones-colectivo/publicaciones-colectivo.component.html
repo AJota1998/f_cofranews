@@ -8,7 +8,7 @@
   <div class="alert alert-secondary col-6 mx-auto" role="alert" *ngIf="showMessagePublicacion" style="text-align: center;">
     {{ alertPublicacion }}
   </div>
-  <div class="row justify-content-center">
+  <div class="row justify-content-space-around">
     <div class="col-lg-5 col-md-8 col-sm-12 table-light" style="opacity: 0.9; border-radius: 5px; text-align: center;">
       <table class="table-light my-auto"  style="opacity: 0.9; border-radius: 5px; text-align: center;">
         <thead>
@@ -31,35 +31,36 @@
           </tr>
         </tbody>
       </table>
-    </div>
-    <div>
-      <div class="card col-lg-8 col-md-8 col-sm-12">
-        <div class="card-body" style="opacity: 0.9; margin: 10px;">
-            <h6>Crear Publicación</h6>
-            <form (submit)="crearPublicacion()">
-                <div class="form-group">
-                    <input type="text" [(ngModel)]="publicacion.titulo" name="titulo" class="form-control" placeholder="Título" required>
-                </div>
-                <div class="form-group">
-                    <label for="tipo">Tipo</label>
-                    <select [(ngModel)]="publicacion.tipo" name="tipo" class="form-control" required>
-                        <option value="Noticia">Noticia</option>
-                        <option value="Mensaje">Mensaje</option>
-                        <option value="Foto">Foto</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <input type="text" [(ngModel)]="publicacion.contenido" name="contenido" placeholder="Contenido" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <input type="text" [(ngModel)]="publicacion.pie" name="pie" class="form-control" placeholder="Pie" required>
-                </div>
-                <button type="submit" class="btn btn-primary btn-block">
-                    Publicar
-                </button>
-            </form>
-        </div>
-    </div>
+
+      <div class="card col-lg-5 col-md-8 col-sm-12" style="opacity: 0.9;">
+        <div>
+          <div class="card-body">
+              <h6>Crear Publicación</h6>
+              <form (submit)="crearPublicacion()">
+                  <div class="form-group">
+                      <input type="text" [(ngModel)]="publicacion.titulo" name="titulo" class="form-control" placeholder="Título" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="tipo">Tipo</label>
+                      <select [(ngModel)]="publicacion.tipo" name="tipo" class="form-control" required>
+                          <option value="Noticia">Noticia</option>
+                          <option value="Mensaje">Mensaje</option>
+                          <option value="Foto">Foto</option>
+                      </select>
+                  </div>
+                  <div class="form-group">
+                      <input type="text" [(ngModel)]="publicacion.contenido" name="contenido" placeholder="Contenido" class="form-control" required>
+                  </div>
+                  <div class="form-group">
+                      <input type="text" [(ngModel)]="publicacion.pie" name="pie" class="form-control" placeholder="Pie" required>
+                  </div>
+                  <button type="submit" class="btn btn-primary btn-block">
+                      Publicar
+                  </button>
+              </form>
+          </div>
+      </div>
+    </div> 
   </div>
 </div>
 
