@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MENU_USUARIO_COLECTIVO, NavbarItem } from 'src/app/shared/components/navbar/model/navbar-item.model';
 import { PublicacionesService } from 'src/app/services/publicaciones.service';
 import { format } from 'date-fns';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-publicaciones-colectivo',
@@ -10,8 +11,17 @@ import { format } from 'date-fns';
 })
 export class PublicacionesColectivoComponent implements OnInit {
 
-  constructor(private publicaciones: PublicacionesService) {}
+  constructor(private publicaciones: PublicacionesService, private authService: AuthService) {}
   menu_usuario_colectivo: NavbarItem[] = MENU_USUARIO_COLECTIVO;
+
+  publicacion = {
+    idColectivo: localStorage.getItem('id'),
+    idEspacio: localStorage.getItem('espacio'),
+    tipo: '',
+    titulo: '',
+    contenido: '',
+    pie: ''
+  }
 
   datos: any[] = []
 
@@ -56,5 +66,29 @@ export class PublicacionesColectivoComponent implements OnInit {
 
   format(fecha: string): string {
     return format(new Date(fecha), 'dd/MM/yyyy');
+  }
+
+  crearPublicacion() {
+
+    if (this.publicacion.tipo === "" || this.publicacion.titulo === "" || this.publicacion.contenido === "" || this.publicacion.pie === "") {
+      this.alert = "Faltan campos por rellenar"
+      this.showMessage = true;
+
+      setTimeout(() => {
+        this.showMessage = false;
+      }, 1700);
+    } else {
+      this.authService.crearPublicacion(this.publicacion)
+      .subscribe(
+        res => {
+          console.log(res);
+        },
+        err => {console.log(err);
+        }
+      )
+      window.location.reload();
+    }
+
+   
   }
 }

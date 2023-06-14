@@ -29,7 +29,32 @@
       </table>
     </div>
     <div class="col-lg-6 col-md-8 col-sm-12">
-      <app-crear-publicacion></app-crear-publicacion>
+      <div class="card col-lg-8 col-md-6 col-sm-12">
+        <div class="card-body">
+            <h6>Crear Publicación</h6>
+            <form (submit)="crearPublicacion()">
+                <div class="form-group">
+                    <input type="text" [(ngModel)]="publicacion.titulo" name="titulo" class="form-control" placeholder="Título" required>
+                </div>
+                <div class="form-group">
+                    <label for="tipo">Tipo</label>
+                    <select [(ngModel)]="publicacion.tipo" name="tipo" class="form-control" required>
+                        <option value="Noticia">Noticia</option>
+                        <option value="Mensaje">Mensaje</option>
+                        <option value="Foto">Foto</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="text" [(ngModel)]="publicacion.contenido" name="contenido" placeholder="Contenido" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" [(ngModel)]="publicacion.pie" name="pie" class="form-control" placeholder="Pie" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">
+                    Publicar
+                </button>
+            </form>
+        </div>
     </div>
   </div>
 </div>
