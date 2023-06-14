@@ -28,6 +28,9 @@ export class PublicacionesColectivoComponent implements OnInit {
   alert: string = '';
   showMessage = false;
 
+  alertPublicacion: string = '';
+  showMessagePublicacion = false;
+
   ngOnInit() {
       this.publicaciones.getPublicaciones().subscribe(res => {
         console.log(res);
@@ -69,14 +72,11 @@ export class PublicacionesColectivoComponent implements OnInit {
   }
 
   crearPublicacion() {
-
+    console.log(this.publicacion);
     if (this.publicacion.tipo === "" || this.publicacion.titulo === "" || this.publicacion.contenido === "" || this.publicacion.pie === "") {
-      this.alert = "Faltan campos por rellenar"
-      this.showMessage = true;
+      this.alertPublicacion = "Faltan campos por rellenar"
+      this.showMessagePublicacion = true;
 
-      setTimeout(() => {
-        this.showMessage = false;
-      }, 1700);
     } else {
       this.authService.crearPublicacion(this.publicacion)
       .subscribe(
@@ -86,7 +86,7 @@ export class PublicacionesColectivoComponent implements OnInit {
         err => {console.log(err);
         }
       )
-      window.location.reload();
+      
     }
 
    
