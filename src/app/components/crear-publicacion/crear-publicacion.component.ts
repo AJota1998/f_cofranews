@@ -22,7 +22,7 @@ export class CrearPublicacionComponent implements OnInit {
   showMessage = false;
   constructor(private authService: AuthService, private router: Router) {}
 
-  crearPublicacion() {
+  crearPublicacion(publicacion: any) {
 
     if (this.publicacion.tipo === "" || this.publicacion.titulo === "" || this.publicacion.contenido === "" || this.publicacion.pie === "") {
       this.alert = "Faltan campos por rellenar"
